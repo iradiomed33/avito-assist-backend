@@ -8,6 +8,9 @@ from app.clients.avito_client import AvitoMessengerClient, AvitoClientError
 from app.settings import avito_settings
 from app.clients.avito_auth_client import AvitoAuthClient, AvitoAuthError
 import logging
+from app.projects.models import Project
+from app.projects.store import ProjectStore
+from typing import List
 
 logging.basicConfig(
     level=logging.INFO,
@@ -24,6 +27,20 @@ stt_client = STTClient()
 avito_auth_client = AvitoAuthClient()
 avito_messenger_client = AvitoMessengerClient(base_url=avito_settings.avito_api_base_url)
 avito_token_store = AvitoTokenStore()
+project_store = ProjectStore()
+
+def ensure_default_project() -> None:
+    existing = project_store.get_project("default")
+    if existing:
+        return
+    default_project = Project(
+        id="default",
+        name="Default project",
+        business_type="services",
+    )
+    project_store.upsert_project(default_project)
+
+ensure_default_project()
 
 
 @app.get("/")
@@ -184,3 +201,24 @@ async def avito_oauth_callback(code: str | None = None, error: str | None = None
 
     # TODO: сохранить tokens в хранилище и привязать к пользователю/проекту
     return {"status": "ok", "tokens": tokens}
+
+
+@app.get("/admin/projects", response_model=List[Project])
+def list_projects():
+    return project_store.list_projects()
+
+
+@app.get("/admin/projects/{project_id}", response_model=Project)
+def get_project(project_id: str):
+    project = project_store.get_project(project_id)
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+    return project
+
+
+@app.put("/admin/projects/{project_id}", response_model=Project)
+def update_project(project_id: str, project: Project):
+    if project.id != project_id:
+        raise HTTPException(status_code=400, detail="Project ID mismatch")
+    project_store.upsert_project(project)
+    return project
