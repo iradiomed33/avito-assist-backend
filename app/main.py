@@ -13,6 +13,15 @@ from app.projects.store import ProjectStore
 from typing import List
 from datetime import datetime
 import zoneinfo
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+from fastapi import Request
+from fastapi.responses import HTMLResponse
+from fastapi import Form
+
+
+
+
 
 
 logging.basicConfig(
@@ -23,6 +32,9 @@ logger = logging.getLogger("avito-assist")
 
 
 app = FastAPI(title="Avito Assist Backend", version="0.1.0")
+
+templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Клиенты внешних сервисов инициализируем один раз при старте приложения
 perplexity_client = PerplexityClient()
@@ -278,3 +290,59 @@ def update_project(project_id: str, project: Project):
         raise HTTPException(status_code=400, detail="Project ID mismatch")
     project_store.upsert_project(project)
     return project
+
+@app.get("/ui/project", response_class=HTMLResponse)
+async def ui_project(request: Request):
+    project = project_store.get_project("default")
+    return templates.TemplateResponse(
+        "project.html",
+        {
+            "request": request,
+            "project": project,
+        },
+    )
+
+@app.get("/ui/project", response_class=HTMLResponse)
+async def ui_get_project(request: Request):
+    project = project_store.get_project("default")
+    if not project:
+        raise HTTPException(status_code=500, detail="Default project not found")
+
+    return templates.TemplateResponse(
+        "project.html",
+        {
+            "request": request,
+            "project": project,
+        },
+    )
+
+
+@app.post("/ui/project")
+async def ui_update_project(
+    request: Request,
+    id: str = Form(...),
+    name: str = Form(...),
+    business_type: str = Form(...),
+    timezone: str = Form(...),
+    enabled: bool = Form(False),
+    schedule_mode: str = Form(...),
+    tone: str = Form(...),
+    allow_price_discussion: bool = Form(False),
+    extra_instructions: str = Form(""),
+):
+    project = project_store.get_project(id)
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+
+    project.name = name
+    project.business_type = business_type  # доверяем HTML‑select
+    project.timezone = timezone
+    project.enabled = enabled
+    project.schedule_mode = schedule_mode  # "always" или "by_schedule"
+    project.tone = tone
+    project.allow_price_discussion = allow_price_discussion
+    project.extra_instructions = extra_instructions or None
+
+    project_store.upsert_project(project)
+
+    return RedirectResponse(url="/ui/project", status_code=303)
