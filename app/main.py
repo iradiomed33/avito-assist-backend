@@ -7,6 +7,13 @@ from fastapi.responses import RedirectResponse
 from app.clients.avito_client import AvitoMessengerClient, AvitoClientError
 from app.settings import avito_settings
 from app.clients.avito_auth_client import AvitoAuthClient, AvitoAuthError
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+)
+logger = logging.getLogger("avito-assist")
 
 
 app = FastAPI(title="Avito Assist Backend", version="0.1.0")
@@ -34,6 +41,12 @@ async def health_check():
     summary="Avito Messenger webhook endpoint",
 )
 async def avito_webhook_handler(webhook: AvitoWebhook):
+    logger.info(
+        "Received Avito webhook: id=%s type=%s chat_id=%s",
+        webhook.id,
+        webhook.payload.type,
+        webhook.payload.value.chat_id,
+    )
     """
     Обработчик вебхуков Avito Messenger.
 
@@ -94,6 +107,13 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
                 )
             except AvitoClientError as exc:
                 messaging_error = str(exc)
+
+                if stt_error:
+                    logger.error("STT error for chat_id=%s: %s", chat_id, stt_error)
+                if assistant_error:
+                    logger.error("Perplexity error for chat_id=%s: %s", chat_id, assistant_error)
+                if messaging_error:
+                    logger.error("Avito messaging error for chat_id=%s: %s", chat_id, messaging_error)
 
     return {
         "status": "received",
