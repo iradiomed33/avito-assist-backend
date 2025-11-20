@@ -1,9 +1,8 @@
 from fastapi import FastAPI, status, HTTPException
-
 from app.schemas_avito import AvitoWebhook
 from app.clients.perplexity_client import PerplexityClient, PerplexityClientError
 from app.clients.stt_client import STTClient, STTClientError
-
+from app.token_store import AvitoTokenStore, AvitoTokens
 from fastapi.responses import RedirectResponse
 from app.clients.avito_client import AvitoMessengerClient, AvitoClientError
 from app.settings import avito_settings
@@ -17,7 +16,7 @@ perplexity_client = PerplexityClient()
 stt_client = STTClient()
 avito_auth_client = AvitoAuthClient()
 avito_messenger_client = AvitoMessengerClient(base_url=avito_settings.avito_api_base_url)
-
+avito_token_store = AvitoTokenStore()
 
 
 @app.get("/")
@@ -82,14 +81,19 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
 
     # Если удалось сгенерировать ответ ассистента — отправляем его в чат Авито
     if assistant_reply:
-        try:
-            avito_messenger_client.send_text_message(
-                chat_id=chat_id,
-                text=assistant_reply,
-                access_token=avito_settings.avito_test_access_token,
-            )
-        except AvitoClientError as exc:
-            messaging_error = str(exc)
+        # Пробуем взять актуальный access_token из стора
+        tokens = avito_token_store.get_default_tokens()
+        if not tokens:
+            messaging_error = "No Avito access token configured"
+        else:
+            try:
+                avito_messenger_client.send_text_message(
+                    chat_id=chat_id,
+                    text=assistant_reply,
+                    access_token=tokens.access_token,
+                )
+            except AvitoClientError as exc:
+                messaging_error = str(exc)
 
     return {
         "status": "received",
@@ -151,6 +155,10 @@ async def avito_oauth_callback(code: str | None = None, error: str | None = None
 
     try:
         tokens = avito_auth_client.exchange_code_for_tokens(code)
+            # Сохраняем токены в файловом хранилище как "default"
+        avito_tokens = AvitoTokens.from_oauth_response(tokens)
+        avito_token_store.save_default_tokens(avito_tokens)
+
     except AvitoAuthError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
 
