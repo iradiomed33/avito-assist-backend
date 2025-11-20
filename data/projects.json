@@ -4,7 +4,7 @@
     "name": "Default project",
     "business_type": "services",
     "timezone": "Europe/Moscow",
-    "enabled": true,
+    "enabled": false,
     "schedule_mode": "always",
     "schedule": {
       "mon": [],
@@ -16,7 +16,7 @@
       "sun": []
     },
     "tone": "friendly",
-    "allow_price_discussion": true,
+    "allow_price_discussion": false,
     "extra_instructions": null
   }
 }

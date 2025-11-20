@@ -1,9 +1,9 @@
-from fastapi import FastAPI, status, HTTPException
+from fastapi import FastAPI, status, HTTPException, Form, Depends, Request
 from app.schemas_avito import AvitoWebhook
 from app.clients.perplexity_client import PerplexityClient, PerplexityClientError
 from app.clients.stt_client import STTClient, STTClientError
 from app.token_store import AvitoTokenStore, AvitoTokens
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, HTMLResponse
 from app.clients.avito_client import AvitoMessengerClient, AvitoClientError
 from app.settings import avito_settings
 from app.clients.avito_auth_client import AvitoAuthClient, AvitoAuthError
@@ -15,9 +15,9 @@ from datetime import datetime
 import zoneinfo
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from fastapi import Request
-from fastapi.responses import HTMLResponse
-from fastapi import Form
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
+import secrets
+
 
 
 
@@ -32,6 +32,8 @@ logger = logging.getLogger("avito-assist")
 
 
 app = FastAPI(title="Avito Assist Backend", version="0.1.0")
+
+
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -270,14 +272,31 @@ async def avito_oauth_callback(code: str | None = None, error: str | None = None
     # TODO: сохранить tokens в хранилище и привязать к пользователю/проекту
     return {"status": "ok", "tokens": tokens}
 
+security = HTTPBasic()
+
+ADMIN_USERNAME = "admin"
+ADMIN_PASSWORD = "Boogie261002!"  # потом вынесем в .env
+
+
+def get_current_admin(credentials: HTTPBasicCredentials = Depends(security)) -> str:
+    correct_username = secrets.compare_digest(credentials.username, ADMIN_USERNAME)
+    correct_password = secrets.compare_digest(credentials.password, ADMIN_PASSWORD)
+    if not (correct_username and correct_password):
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid credentials",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+    return credentials.username
+
 
 @app.get("/admin/projects", response_model=List[Project])
-def list_projects():
+def list_projects(current_admin: str = Depends(get_current_admin)):
     return project_store.list_projects()
 
 
 @app.get("/admin/projects/{project_id}", response_model=Project)
-def get_project(project_id: str):
+def get_project(project_id: str, current_admin: str = Depends(get_current_admin)):
     project = project_store.get_project(project_id)
     if not project:
         raise HTTPException(status_code=404, detail="Project not found")
@@ -285,14 +304,21 @@ def get_project(project_id: str):
 
 
 @app.put("/admin/projects/{project_id}", response_model=Project)
-def update_project(project_id: str, project: Project):
+def update_project(
+    project_id: str,
+    project: Project,
+    current_admin: str = Depends(get_current_admin),
+):
     if project.id != project_id:
         raise HTTPException(status_code=400, detail="Project ID mismatch")
     project_store.upsert_project(project)
     return project
 
 @app.get("/ui/project", response_class=HTMLResponse)
-async def ui_project(request: Request):
+async def ui_get_project(
+    request: Request,
+    current_admin: str = Depends(get_current_admin),
+):
     project = project_store.get_project("default")
     return templates.TemplateResponse(
         "project.html",
@@ -302,19 +328,6 @@ async def ui_project(request: Request):
         },
     )
 
-@app.get("/ui/project", response_class=HTMLResponse)
-async def ui_get_project(request: Request):
-    project = project_store.get_project("default")
-    if not project:
-        raise HTTPException(status_code=500, detail="Default project not found")
-
-    return templates.TemplateResponse(
-        "project.html",
-        {
-            "request": request,
-            "project": project,
-        },
-    )
 
 
 @app.post("/ui/project")
@@ -329,7 +342,9 @@ async def ui_update_project(
     tone: str = Form(...),
     allow_price_discussion: bool = Form(False),
     extra_instructions: str = Form(""),
+    current_admin: str = Depends(get_current_admin),
 ):
+
     project = project_store.get_project(id)
     if not project:
         raise HTTPException(status_code=404, detail="Project not found")
