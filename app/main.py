@@ -11,6 +11,9 @@ import logging
 from app.projects.models import Project
 from app.projects.store import ProjectStore
 from typing import List
+from datetime import datetime
+import zoneinfo
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -28,6 +31,34 @@ avito_auth_client = AvitoAuthClient()
 avito_messenger_client = AvitoMessengerClient(base_url=avito_settings.avito_api_base_url)
 avito_token_store = AvitoTokenStore()
 project_store = ProjectStore()
+
+def _is_within_schedule(project: Project, now_utc: datetime) -> bool:
+    """
+    Проверяет, попадает ли текущее время в рабочие интервалы проекта.
+    """
+    if project.schedule_mode == "always":
+        return True
+
+    tz = zoneinfo.ZoneInfo(project.timezone)
+    now_local = now_utc.astimezone(tz)
+    weekday = now_local.weekday()  # 0=Mon ... 6=Sun
+    time_str = now_local.strftime("%H:%M")
+
+    day_map = {
+        0: project.schedule.mon,
+        1: project.schedule.tue,
+        2: project.schedule.wed,
+        3: project.schedule.thu,
+        4: project.schedule.fri,
+        5: project.schedule.sat,
+        6: project.schedule.sun,
+    }
+    ranges: List[TimeRange] = day_map.get(weekday, [])
+
+    for r in ranges:
+        if r.start <= time_str <= r.end:
+            return True
+    return False
 
 def ensure_default_project() -> None:
     existing = project_store.get_project("default")
@@ -64,6 +95,31 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
         webhook.payload.type,
         webhook.payload.value.chat_id,
     )
+
+    project = project_store.get_project("default")
+    if not project:
+        logger.error("No default project configured, skipping webhook")
+        return AvitoWebhookResponse(
+            processed=False,
+            reason="no_project",
+            stt_error=None,
+            assistant_error=None,
+            messaging_error=None,
+        )
+
+    now_utc = datetime.utcnow()
+    if not project.enabled or not _is_within_schedule(project, now_utc):
+        logger.info(
+            "Assistant disabled or out of schedule for project=%s, skipping",
+            project.id,
+        )
+        return AvitoWebhookResponse(
+            processed=False,
+            reason="assistant_disabled_or_out_of_schedule",
+            stt_error=None,
+            assistant_error=None,
+            messaging_error=None,
+        )
     """
     Обработчик вебхуков Avito Messenger.
 
@@ -125,12 +181,12 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
             except AvitoClientError as exc:
                 messaging_error = str(exc)
 
-                if stt_error:
-                    logger.error("STT error for chat_id=%s: %s", chat_id, stt_error)
-                if assistant_error:
-                    logger.error("Perplexity error for chat_id=%s: %s", chat_id, assistant_error)
-                if messaging_error:
-                    logger.error("Avito messaging error for chat_id=%s: %s", chat_id, messaging_error)
+    if stt_error:
+        logger.error("STT error for chat_id=%s: %s", chat_id, stt_error)
+    if assistant_error:
+        logger.error("Perplexity error for chat_id=%s: %s", chat_id, assistant_error)
+    if messaging_error:
+        logger.error("Avito messaging error for chat_id=%s: %s", chat_id, messaging_error)
 
     return {
         "status": "received",
