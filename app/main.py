@@ -29,7 +29,8 @@ from app.middleware import RequestLoggingMiddleware
 from app.logging_config import setup_logging
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
-
+from dotenv import load_dotenv
+load_dotenv()
 
 
 
