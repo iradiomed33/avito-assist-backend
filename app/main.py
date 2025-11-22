@@ -32,6 +32,9 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from dotenv import load_dotenv
 load_dotenv()
 
+print("ADMIN_USERNAME:", os.getenv("ADMIN_USERNAME"))
+print("ADMIN_PASSWORD:", os.getenv("ADMIN_PASSWORD"))
+
 
 
 
