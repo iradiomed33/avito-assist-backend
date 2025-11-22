@@ -4,7 +4,7 @@
     "name": "Default project",
     "business_type": "services",
     "timezone": "Europe/Moscow",
-    "enabled": false,
+    "enabled": true,
     "schedule_mode": "always",
     "schedule": {
       "mon": [],

@@ -1,0 +1,41 @@
+2025-11-22 12:20:27 - app.clients.avito_client - [31mERROR[0m - Avito Messenger API returned non-2xx status: 403, body=Forbidden
+2025-11-22 12:20:32 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252437536 method=GET path=/avito/oauth/callback client=testclient
+2025-11-22 12:20:32 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252437536 method=GET path=/avito/oauth/callback status=200 duration=2.60ms
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252528464 method=GET path=/nonexistent-endpoint client=testclient
+2025-11-22 12:20:33 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/nonexistent-endpoint detail=Not Found
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252528464 method=GET path=/nonexistent-endpoint status=404 duration=1.11ms
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252534544 method=POST path=/webhooks/avito client=testclient
+2025-11-22 12:20:33 - avito-assist - [31mERROR[0m - Validation Error: path=/webhooks/avito errors=[{'type': 'missing', 'loc': ('body', 'version'), 'msg': 'Field required', 'input': {'id': 'test'}}, {'type': 'missing', 'loc': ('body', 'timestamp'), 'msg': 'Field required', 'input': {'id': 'test'}}, {'type': 'missing', 'loc': ('body', 'payload'), 'msg': 'Field required', 'input': {'id': 'test'}}]
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252534544 method=POST path=/webhooks/avito status=422 duration=3.92ms
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252520272 method=GET path=/ client=testclient
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252520272 method=GET path=/ status=200 duration=0.38ms
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252521488 method=GET path=/ client=testclient
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252521488 method=GET path=/ status=200 duration=0.38ms
+2025-11-22 12:20:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252876496 method=POST path=/webhooks/avito client=testclient
+2025-11-22 12:20:33 - avito-assist - [32mINFO[0m - Received Avito webhook: id=wh_123 type=message chat_id=chat_1
+2025-11-22 12:20:36 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252876496 method=POST path=/webhooks/avito status=200 duration=3270.53ms
+2025-11-22 12:20:36 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252463872 method=POST path=/webhooks/avito client=testclient
+2025-11-22 12:20:36 - avito-assist - [32mINFO[0m - Received Avito webhook: id=wh_456 type=message chat_id=chat_2
+2025-11-22 12:20:36 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252463872 method=POST path=/webhooks/avito status=200 duration=2.01ms
+2025-11-22 12:20:36 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252470672 method=POST path=/webhooks/avito client=testclient
+2025-11-22 12:20:36 - avito-assist - [32mINFO[0m - Received Avito webhook: id=wh_789 type=message chat_id=chat_3
+2025-11-22 12:20:36 - avito-assist - [31mERROR[0m - Perplexity error for chat_id=chat_3: Test-induced failure
+2025-11-22 12:20:36 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252470672 method=POST path=/webhooks/avito status=200 duration=1.85ms
+2025-11-22 12:20:36 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645252717904 method=POST path=/webhooks/avito client=testclient
+2025-11-22 12:20:36 - avito-assist - [32mINFO[0m - Received Avito webhook: id=wh_voice_1 type=message chat_id=chat_1
+2025-11-22 12:20:37 - app.clients.avito_client - [31mERROR[0m - Avito Messenger API returned non-2xx status: 403, body={"result":{"status":false,"message":"invalid access token"}}
+2025-11-22 12:20:37 - avito-assist - [31mERROR[0m - Avito messaging error for chat_id=chat_1: Avito Messenger API returned status 403
+2025-11-22 12:20:37 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645252717904 method=POST path=/webhooks/avito status=200 duration=930.30ms
+2025-11-22 12:20:37 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645253522256 method=POST path=/webhooks/avito client=testclient
+2025-11-22 12:20:37 - avito-assist - [32mINFO[0m - Received Avito webhook: id=wh_voice_2 type=message chat_id=chat_2
+2025-11-22 12:20:37 - avito-assist - [31mERROR[0m - STT error for chat_id=chat_2: STT test failure
+2025-11-22 12:20:37 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645253522256 method=POST path=/webhooks/avito status=200 duration=1.72ms
+2025-11-22 12:20:37 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645253157616 method=GET path=/avito/oauth/start client=testclient
+2025-11-22 12:20:37 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645253157616 method=GET path=/avito/oauth/start status=307 duration=0.31ms
+2025-11-22 12:20:37 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=2645253158096 method=GET path=/avito/oauth/callback client=testclient
+2025-11-22 12:20:37 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=2645253158096 method=GET path=/avito/oauth/callback status=200 duration=3.65ms
+2025-11-22 12:20:37 - app.clients.stt_client - [31mERROR[0m - SpeechKit STT returned non-200 status: 500, body=Internal error
+2025-11-22 12:20:37 - app.clients.stt_client - [31mERROR[0m - SpeechKit STT error: BAD_AUDIO, message=Audio format not supported
+2025-11-22 12:20:37 - app.clients.stt_client - [31mERROR[0m - SpeechKit STT returned empty result
+2025-11-22 12:21:28 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=1676538035712 method=GET path=/ client=127.0.0.1
+2025-11-22 12:21:28 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=1676538035712 method=GET path=/ status=200 duration=0.80ms

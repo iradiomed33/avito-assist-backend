@@ -20,21 +20,36 @@ import secrets
 from app.avito_item_client import AvitoItemClient
 from app.prompts import build_system_prompt
 from datetime import timezone
+from app.error_handlers import (
+    http_exception_handler,
+    validation_exception_handler,
+    generic_exception_handler,
+)
+from app.middleware import RequestLoggingMiddleware
+from app.logging_config import setup_logging
+from fastapi.exceptions import RequestValidationError
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 
 
 
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+setup_logging(
+    level="INFO",
+    json_logs=False,  # Для прода поставь True
+    log_file="logs/avito-assist.log",  # Опционально
 )
 logger = logging.getLogger("avito-assist")
 
 
 app = FastAPI(title="Avito Assist Backend", version="0.1.0")
 
+app.add_middleware(RequestLoggingMiddleware)
 
+# Подключаем error handlers
+app.add_exception_handler(StarletteHTTPException, http_exception_handler)
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
+app.add_exception_handler(Exception, generic_exception_handler)
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
