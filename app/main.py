@@ -135,28 +135,9 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
             "assistant_error": None,
             "messaging_error": None,
         }
-
+     # Пока не получаем context — будем добавлять позже, когда Авито одобрит приложение
     item_context_str = ""
-    context = webhook.payload.value.context
     author_id = webhook.payload.value.author_id
-    
-    if context and (context.item_id or context.ad_id):
-        item_id = context.item_id or context.ad_id
-        logger.info("Fetching item details: item_id=%s, author_id=%s", item_id, author_id)
-        
-        # Пробуем получить токен для author_id
-        tokens = avito_token_store.get_default_tokens()
-        if tokens and tokens.access_token:
-            try:
-                from app.avito_item_client import AvitoItemClient
-                item_client = AvitoItemClient(tokens.access_token)
-                item_data = await item_client.get_item_details(author_id, item_id)
-                
-                if item_data:
-                    item_context_str = item_client.format_item_for_prompt(item_data)
-                    logger.info("Got item context: %s", item_context_str[:100])
-            except Exception as exc:
-                logger.warning("Failed to fetch item details: %s", exc)
     original_message_type = webhook.payload.value.type
     content = webhook.payload.value.content
     chat_id = webhook.payload.value.chat_id

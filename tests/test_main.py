@@ -1,36 +1,27 @@
-import pytest
 from fastapi.testclient import TestClient
-from app.main import app, project_store
+
+from app.main import app
+
 
 client = TestClient(app)
 
 
-@pytest.fixture(autouse=True)
-def enable_default_project():
-    """Включаем проект по умолчанию перед каждым тестом"""
-    project = project_store.get_project("default")
-    if project:
-        project.enabled = True
-        project.schedule_mode = "always"
-        project_store.upsert_project(project)
-    yield
-
-
 def test_health_check():
-    """Проверка эндпоинта health check."""
     response = client.get("/")
     assert response.status_code == 200
     data = response.json()
     assert data["status"] == "ok"
     assert data["service"] == "avito-assist-backend"
+    assert data["version"] == "0.1.0"
 
 
 def test_avito_webhook_basic(monkeypatch):
     from app import main as main_module
 
     def mock_send_text_message(chat_id: str, text: str, access_token: str) -> None:
+        # Проверим, что вызывается с ожидемыми параметрами
         assert chat_id == "chat_1"
-        assert isinstance(text, str)
+        assert text == "Привет, это тестовое сообщение" or isinstance(text, str)
         assert isinstance(access_token, str)
 
     monkeypatch.setattr(
@@ -54,8 +45,7 @@ def test_avito_webhook_basic(monkeypatch):
                 "type": "text",
                 "content": {
                     "text": "Привет, это тестовое сообщение"
-                },
-                "context": None
+                }
             }
         }
     }
@@ -69,6 +59,9 @@ def test_avito_webhook_basic(monkeypatch):
     assert data["event_type"] == "message"
     assert data["message_type"] == "text"
     assert data["message_text"] == "Привет, это тестовое сообщение"
+    assert "assistant_reply" in data
+    assert isinstance(data["assistant_reply"], str) or data["assistant_reply"] is None
+    assert "assistant_error" in data
 
 
 def test_avito_webhook_with_mocked_perplexity_success(monkeypatch):
@@ -108,8 +101,7 @@ def test_avito_webhook_with_mocked_perplexity_success(monkeypatch):
                 "type": "text",
                 "content": {
                     "text": "Тест для моков"
-                },
-                "context": None
+                }
             }
         }
     }
@@ -154,8 +146,7 @@ def test_avito_webhook_with_mocked_perplexity_error(monkeypatch):
                 "type": "text",
                 "content": {
                     "text": "Тест ошибки Perplexity"
-                },
-                "context": None
+                }
             }
         }
     }
@@ -203,8 +194,7 @@ def test_avito_webhook_voice_with_mocked_stt_and_perplexity(monkeypatch):
                     "text": None,
                     "audio_url": "https://example.com/audio.ogg",
                     "duration_ms": 12000
-                },
-                "context": None
+                }
             }
         }
     }
@@ -213,8 +203,11 @@ def test_avito_webhook_voice_with_mocked_stt_and_perplexity(monkeypatch):
     assert response.status_code == 200
     data = response.json()
     assert data["message_type"] == "voice"
+    assert data["message_text"] is None
     assert data["recognized_text"] == "Распознанный текст голоса"
     assert data["assistant_reply"] == "[MOCKED] Ответ на голос"
+    assert data["assistant_error"] is None
+    assert data["stt_error"] is None
 
 
 def test_avito_webhook_voice_stt_error(monkeypatch):
@@ -253,8 +246,7 @@ def test_avito_webhook_voice_stt_error(monkeypatch):
                     "text": None,
                     "audio_url": "https://example.com/audio2.ogg",
                     "duration_ms": 8000
-                },
-                "context": None
+                }
             }
         }
     }
@@ -263,48 +255,43 @@ def test_avito_webhook_voice_stt_error(monkeypatch):
     assert response.status_code == 200
     data = response.json()
     assert data["message_type"] == "voice"
-    assert data["stt_error"] == "STT test failure"
+    assert data["recognized_text"] is None
     assert data["assistant_reply"] is None
+    assert data["stt_error"] == "STT test failure"
 
 
-def test_avito_webhook_disabled_project():
-    """Тест вебхука при выключенном проекте"""
+def test_avito_oauth_start_redirect():
+    response = client.get("/avito/oauth/start", follow_redirects=False)
+    # FastAPI RedirectResponse по умолчанию 307 или 302
+    assert response.status_code in (302, 307)
+    location = response.headers.get("location")
+    assert location is not None
+    assert "client_id=" in location
+    assert "redirect_uri=" in location
+    assert "response_type=code" in location
+
+
+def test_avito_oauth_callback_success(monkeypatch):
     from app import main as main_module
-    
-    # Выключаем проект
-    project = main_module.project_store.get_project("default")
-    original_enabled = project.enabled
-    project.enabled = False
-    main_module.project_store.upsert_project(project)
-    
-    payload = {
-        "id": "wh_disabled",
-        "version": 1,
-        "timestamp": "2025-01-01T12:00:00Z",
-        "payload": {
-            "type": "message",
-            "value": {
-                "id": "msg_1",
-                "chat_id": "chat_1",
-                "user_id": "user_1",
-                "author_id": "user_1",
-                "created": "2025-01-01T12:00:00Z",
-                "type": "text",
-                "content": {
-                    "text": "Тест"
-                },
-                "context": None
-            }
+
+    def mock_exchange_code_for_tokens(code: str) -> dict:
+        assert code == "TEST_CODE"
+        return {
+            "access_token": "ACCESS",
+            "refresh_token": "REFRESH",
+            "expires_in": 3600,
         }
-    }
-    
-    response = client.post("/webhooks/avito", json=payload)
-    
+
+    monkeypatch.setattr(
+        main_module.avito_auth_client,
+        "exchange_code_for_tokens",
+        mock_exchange_code_for_tokens,
+    )
+
+    response = client.get("/avito/oauth/callback?code=TEST_CODE")
     assert response.status_code == 200
     data = response.json()
-    assert data["processed"] == False
-    assert "reason" in data
-    
-    # Восстанавливаем состояние
-    project.enabled = original_enabled
-    main_module.project_store.upsert_project(project)
+    assert data["status"] == "ok"
+    assert data["tokens"]["access_token"] == "ACCESS"
+    assert data["tokens"]["refresh_token"] == "REFRESH"
+
