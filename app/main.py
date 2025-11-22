@@ -17,8 +17,8 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 import secrets
-
-
+from app.avito_item_client import AvitoItemClient
+from app.prompts import build_system_prompt
 
 
 
@@ -113,13 +113,13 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
     project = project_store.get_project("default")
     if not project:
         logger.error("No default project configured, skipping webhook")
-        return AvitoWebhookResponse(
-            processed=False,
-            reason="no_project",
-            stt_error=None,
-            assistant_error=None,
-            messaging_error=None,
-        )
+        return {
+            "processed": False,
+            "reason": "no_project",
+            "stt_error": None,
+            "assistant_error": None,
+            "messaging_error": None,
+        }
 
     now_utc = datetime.utcnow()
     if not project.enabled or not _is_within_schedule(project, now_utc):
@@ -127,23 +127,35 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
             "Assistant disabled or out of schedule for project=%s, skipping",
             project.id,
         )
-        return AvitoWebhookResponse(
-            processed=False,
-            reason="assistant_disabled_or_out_of_schedule",
-            stt_error=None,
-            assistant_error=None,
-            messaging_error=None,
-        )
-    """
-    Обработчик вебхуков Avito Messenger.
+        return {
+            "processed": False,
+            "reason": "no_project",
+            "stt_error": None,
+            "assistant_error": None,
+            "messaging_error": None,
+        }
 
-    - различаем типы сообщений: text / voice;
-    - для text: отправляем текст в Perplexity;
-    - для voice: сначала распознаём речь через STT, затем отправляем
-      распознанный текст в Perplexity;
-    - при ошибках внешних сервисов (STT/Perplexity/Avito Messenger) не роняем вебхук,
-      а возвращаем информацию об ошибке в полях stt_error/assistant_error/messaging_error.
-    """
+    item_context_str = ""
+    context = webhook.payload.value.context
+    author_id = webhook.payload.value.author_id
+    
+    if context and (context.item_id or context.ad_id):
+        item_id = context.item_id or context.ad_id
+        logger.info("Fetching item details: item_id=%s, author_id=%s", item_id, author_id)
+        
+        # Пробуем получить токен для author_id
+        tokens = avito_token_store.get_default_tokens()
+        if tokens and tokens.access_token:
+            try:
+                from app.avito_item_client import AvitoItemClient
+                item_client = AvitoItemClient(tokens.access_token)
+                item_data = await item_client.get_item_details(author_id, item_id)
+                
+                if item_data:
+                    item_context_str = item_client.format_item_for_prompt(item_data)
+                    logger.info("Got item context: %s", item_context_str[:100])
+            except Exception as exc:
+                logger.warning("Failed to fetch item details: %s", exc)
     original_message_type = webhook.payload.value.type
     content = webhook.payload.value.content
     chat_id = webhook.payload.value.chat_id
@@ -169,12 +181,11 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
     # Если у нас есть какой-то текст (исходный или распознанный) — зовём Perplexity
     if message_text:
         try:
+            system_prompt = build_system_prompt(project, item_context="")
+    
             assistant_reply = perplexity_client.generate_reply(
                 user_message=message_text,
-                system_prompt=(
-                    "Ты ИИ-ассистент для общения в Авито. "
-                    "Отвечай кратко, вежливо и по делу."
-                ),
+                system_prompt=system_prompt,
             )
         except PerplexityClientError as exc:
             assistant_error = str(exc)
