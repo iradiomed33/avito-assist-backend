@@ -19,6 +19,7 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 import secrets
 from app.avito_item_client import AvitoItemClient
 from app.prompts import build_system_prompt
+from datetime import timezone
 
 
 
@@ -121,7 +122,7 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
             "messaging_error": None,
         }
 
-    now_utc = datetime.utcnow()
+    now_utc = datetime.now(timezone.utc)
     if not project.enabled or not _is_within_schedule(project, now_utc):
         logger.info(
             "Assistant disabled or out of schedule for project=%s, skipping",
