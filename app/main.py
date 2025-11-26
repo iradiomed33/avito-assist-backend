@@ -246,7 +246,7 @@ async def avito_oauth_start():
         return {"error": "Missing AVITO_CLIENT_ID or AVITO_REDIRECT_URI in environment"}
 
     oauth_url = (
-        f"https://api.avito.ru/oauth/authorize?"
+        f"https://www.avito.ru/oauth/authorize?"
         f"client_id={client_id}&"
         f"response_type=code&"
         f"redirect_uri={redirect_uri}"
