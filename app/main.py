@@ -231,32 +231,20 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
     }
 
 
-@app.get("/avito/oauth/start")
+@app.get("/avito-oauth-start")
 async def avito_oauth_start():
-    """
-    Старт OAuth2-авторизации Авито.
+    client_id = os.getenv("AVITO_CLIENT_ID")
+    redirect_uri = os.getenv("AVITO_REDIRECT_URI")
+    if not client_id or not redirect_uri:
+        return {"error": "Missing AVITO_CLIENT_ID or AVITO_REDIRECT_URI in environment"}
 
-    Редиректит пользователя на страницу авторизации Авито с параметрами:
-    - client_id
-    - redirect_uri
-    - response_type=code
-    """
-    params = {
-        "client_id": avito_settings.avito_client_id,
-        "redirect_uri": avito_settings.avito_redirect_uri,
-        "response_type": "code",
-    }
-
-    # Примерный путь, точный URL нужно выровнять по докам Avito Auth
-    auth_url = (
-        f"{avito_settings.avito_auth_base_url.rstrip('/')}"
-        f"/oauth/authorize"
-        f"?client_id={params['client_id']}"
-        f"&redirect_uri={params['redirect_uri']}"
-        f"&response_type={params['response_type']}"
+    oauth_url = (
+        "https://api.avito.ru/oauth/authorize"
+        f"?client_id={client_id}"
+        f"&response_type=code"
+        f"&redirect_uri={redirect_uri}"
     )
-
-    return RedirectResponse(url=auth_url)
+    return RedirectResponse(oauth_url)
 
 
 @app.get("/avito/oauth/callback")
