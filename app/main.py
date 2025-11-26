@@ -231,18 +231,25 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
     }
 
 
-@app.get("/avito-oauth-start")
+from fastapi.responses import RedirectResponse
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+@app.get("/avito/oauth/start")
 async def avito_oauth_start():
     client_id = os.getenv("AVITO_CLIENT_ID")
     redirect_uri = os.getenv("AVITO_REDIRECT_URI")
+
     if not client_id or not redirect_uri:
         return {"error": "Missing AVITO_CLIENT_ID or AVITO_REDIRECT_URI in environment"}
 
     oauth_url = (
-        "https://api.avito.ru/oauth/authorize"
-        f"?client_id={client_id}"
-        f"&response_type=code"
-        f"&redirect_uri={redirect_uri}"
+        f"https://api.avito.ru/oauth/authorize?"
+        f"client_id={client_id}&"
+        f"response_type=code&"
+        f"redirect_uri={redirect_uri}"
     )
     return RedirectResponse(oauth_url)
 
