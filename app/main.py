@@ -33,7 +33,7 @@ from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from dotenv import load_dotenv
 from app.chat_state import ChatState
-
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 load_dotenv()
 
@@ -71,6 +71,44 @@ avito_token_store = AvitoTokenStore()
 project_store = ProjectStore()
 chat_state = ChatState()
 avito_messenger_client = AvitoMessengerClient()
+
+
+async def avito_auto_poller():
+    """Поллер: чаты → Perplexity → автоответ каждые 30 сек"""
+    try:
+        tokens = avito_token_store.get_default_tokens()
+        chats = avito_messenger_client.get_chats(tokens.access_token, unread_only=True)
+        
+        for chat in chats[:3]:  # 3 активных чата
+            chat_id = chat["id"]
+            messages = avito_messenger_client.get_messages(tokens.access_token, chat_id, limit=3)
+            
+            # Последнее сообщение клиента (direction="in")
+            last_client_msg = next((m for m in reversed(messages) if m.get("direction") == "in"), None)
+            if last_client_msg:
+                client_text = last_client_msg["content"]["text"]
+                logger.info(f"Новое сообщение в {chat_id}: {client_text}")
+                
+                # Perplexity генерирует ответ
+                ai_response = await perplexity_ask(f"Клиент: {client_text}\nОтветь как продавец телескопов:")
+                
+                # Отправляем!
+                result = avito_messenger_client.send_text(tokens.access_token, chat_id, ai_response)
+                logger.info(f"✅ Отправлен автоответ: {ai_response}")
+                
+                # Помечаем прочитанным
+                avito_messenger_client.mark_read(tokens.access_token, chat_id)
+                
+    except Exception as e:
+        logger.error(f"Поллер ошибка: {e}")
+
+# Запуск при старте приложения
+@app.on_event("startup")
+async def startup_scheduler():
+    scheduler = AsyncIOScheduler()
+    scheduler.add_job(avito_auto_poller, "interval", seconds=30)
+    scheduler.start()
+    logger.info("🚀 Автоответчик запущен! Каждые 30 сек")
 
 def _is_within_schedule(project: Project, now_utc: datetime) -> bool:
     """
