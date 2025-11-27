@@ -1,4 +1,5 @@
 import os
+import requests
 from fastapi import FastAPI, status, HTTPException, Form, Depends, Request
 from app.schemas_avito import AvitoWebhook
 from app.clients.perplexity_client import PerplexityClient, PerplexityClientError
@@ -31,7 +32,7 @@ from app.logging_config import setup_logging
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from dotenv import load_dotenv
-import os
+
 
 load_dotenv()
 
