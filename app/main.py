@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, status, HTTPException, Form, Depends, Request
 from app.schemas_avito import AvitoWebhook
 from app.clients.perplexity_client import PerplexityClient, PerplexityClientError
@@ -29,13 +30,7 @@ from app.middleware import RequestLoggingMiddleware
 from app.logging_config import setup_logging
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
-
-print("ADMIN_USERNAME:", os.getenv("ADMIN_USERNAME"))
-print("ADMIN_PASSWORD:", os.getenv("ADMIN_PASSWORD"))
 
 
 
@@ -233,24 +228,33 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
     }
 
 
-
-
-
 @app.get("/avito/oauth/start")
 async def avito_oauth_start():
-    client_id = os.getenv("AVITO_CLIENT_ID")
-    redirect_uri = os.getenv("AVITO_REDIRECT_URI")
+    """
+    Старт OAuth2-авторизации Авито.
 
-    if not client_id or not redirect_uri:
-        return {"error": "Missing AVITO_CLIENT_ID or AVITO_REDIRECT_URI in environment"}
-
-    oauth_url = (
-        f"https://avito.ru/oauth/"
+    Редиректит пользователя на страницу авторизации Авито с параметрами:
+    - client_id
+    - redirect_uri
+    - response_type=code
+    """
+    params = {
+        "client_id": avito_settings.avito_client_id,
+        "redirect_uri": avito_settings.avito_redirect_uri,
+        "response_type": "code",
+    }
+    scope = "messenger:read messenger:write items:info user:read"
+    # Примерный путь, точный URL нужно выровнять по докам Avito Auth
+    auth_url = (
+        f"{avito_settings.avito_auth_base_url.rstrip('/')}"
+        f"/oauth"
         f"client_id={client_id}&"
         f"response_type=code&"
+        f"scope={scope}&"
         f"redirect_uri={redirect_uri}"
     )
-    return RedirectResponse(oauth_url)
+
+    return RedirectResponse(url=auth_url)
 
 
 @app.get("/avito/oauth/callback")
@@ -280,8 +284,11 @@ async def avito_oauth_callback(code: str | None = None, error: str | None = None
 
 security = HTTPBasic()
 
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "Boogie261002!"  # потом вынесем в .env
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "changeme")  # потом вынесем в .env
+
+if not ADMIN_PASSWORD:
+    raise ValueError("ADMIN_PASSWORD must be set in .env file!")
 
 
 def get_current_admin(credentials: HTTPBasicCredentials = Depends(security)) -> str:
