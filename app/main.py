@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, status, HTTPException, Form, Depends, Request
 from app.schemas_avito import AvitoWebhook
 from app.clients.perplexity_client import PerplexityClient, PerplexityClientError
@@ -242,14 +243,15 @@ async def avito_oauth_start():
         "redirect_uri": avito_settings.avito_redirect_uri,
         "response_type": "code",
     }
-
+    scope = "messenger:read messenger:write items:info user:read"
     # Примерный путь, точный URL нужно выровнять по докам Avito Auth
     auth_url = (
         f"{avito_settings.avito_auth_base_url.rstrip('/')}"
-        f"/oauth/authorize"
-        f"?client_id={params['client_id']}"
-        f"&redirect_uri={params['redirect_uri']}"
-        f"&response_type={params['response_type']}"
+        f"/oauth"
+        f"client_id={client_id}&"
+        f"response_type=code&"
+        f"scope={scope}&"
+        f"redirect_uri={redirect_uri}"
     )
 
     return RedirectResponse(url=auth_url)
@@ -282,8 +284,11 @@ async def avito_oauth_callback(code: str | None = None, error: str | None = None
 
 security = HTTPBasic()
 
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "Boogie261002!"  # потом вынесем в .env
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "changeme")  # потом вынесем в .env
+
+if not ADMIN_PASSWORD:
+    raise ValueError("ADMIN_PASSWORD must be set in .env file!")
 
 
 def get_current_admin(credentials: HTTPBasicCredentials = Depends(security)) -> str:
