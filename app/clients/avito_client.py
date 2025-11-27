@@ -33,14 +33,31 @@ class AvitoMessengerClient:
             "https://api.avito.ru",
         )
 
-    def get_chats(self, access_token: str, limit: int = 20) -> List[Chat]:
-        """Получить список чатов аккаунта."""
-        url = f"{self.base_url}/messenger/v1/chats"  # ← БЕЗ accounts/{id}
-        headers = {"Authorization": f"Bearer {access_token}"}
-        params = {"limit": limit}
-        
-        resp = self._make_request("GET", url, headers=headers, params=params)
-        return [Chat(**chat) for chat in resp]
+    def get_chats(
+        self,
+        access_token: str,
+        limit: int = 10,
+        unread_only: bool | None = None,
+    ) -> list[dict]:
+        """
+        Получить список чатов.
+        Если unread_only=True — только непрочитанные (поддерживается Avito API).
+        """
+        url = f"{self.base_url}/messenger/v2/accounts/{self.user_id}/chats"
+
+        params: dict[str, str] = {"limit": str(limit)}
+        if unread_only is not None:
+            # Avito ждёт boolean query-параметр unread_only
+            params["unread_only"] = "true" if unread_only else "false"
+
+        headers = {
+            "Authorization": f"Bearer {access_token}",
+        }
+
+        resp = requests.get(url, headers=headers, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        return data.get("chats", [])
 
     def get_chat_messages(
         self, 
