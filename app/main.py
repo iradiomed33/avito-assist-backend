@@ -32,6 +32,7 @@ from app.logging_config import setup_logging
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from dotenv import load_dotenv
+from app.chat_state import ChatState
 
 
 load_dotenv()
@@ -68,6 +69,7 @@ avito_auth_client = AvitoAuthClient()
 avito_messenger_client = AvitoMessengerClient(base_url=avito_settings.avito_api_base_url)
 avito_token_store = AvitoTokenStore()
 project_store = ProjectStore()
+chat_state = ChatState()
 
 def _is_within_schedule(project: Project, now_utc: datetime) -> bool:
     """
@@ -353,6 +355,42 @@ async def debug_avito_self(current_admin: str = Depends(get_current_admin)):
         }
     except Exception as exc:
         logger.exception("Failed to call Avito /core/v1/accounts/self")
+        raise HTTPException(status_code=502, detail=str(exc))
+
+@app.get("/admin/debug/chats")
+async def debug_chats(current_admin: str = Depends(get_current_admin)):
+    """Debug: получить список чатов."""
+    tokens = avito_token_store.get_default_tokens()
+    if not tokens:
+        raise HTTPException(status_code=404, detail="No Avito tokens")
+    
+    try:
+        chats = avito_messenger_client.get_chats(
+            account_id="107238239",  # Твой аккаунт ID
+            access_token=tokens.access_token
+        )
+        return {"chats": [c.dict() for c in chats]}
+    except AvitoClientError as exc:
+        raise HTTPException(status_code=502, detail=str(exc))
+
+@app.get("/admin/debug/chat/{chat_id}/messages")
+async def debug_chat_messages(
+    chat_id: str, 
+    current_admin: str = Depends(get_current_admin)
+):
+    """Debug: сообщения в чате."""
+    tokens = avito_token_store.get_default_tokens()
+    if not tokens:
+        raise HTTPException(status_code=404, detail="No Avito tokens")
+    
+    try:
+        messages = avito_messenger_client.get_chat_messages(
+            chat_id=chat_id,
+            access_token=tokens.access_token,
+            limit=5
+        )
+        return {"messages": [m.dict() for m in messages]}
+    except AvitoClientError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
 
 

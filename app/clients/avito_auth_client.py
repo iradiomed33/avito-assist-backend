@@ -8,6 +8,8 @@ from app.settings import avito_settings
 logger = logging.getLogger(__name__)
 
 
+
+
 class AvitoAuthError(Exception):
     """
     Доменное исключение для ошибок авторизации Avito OAuth2.
