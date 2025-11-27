@@ -244,14 +244,14 @@ async def avito_oauth_start():
     if not client_id or not redirect_uri:
         raise HTTPException(status_code=500, detail="Avito OAuth not configured")
 
-    scope = "messenger:read messenger:write items:info user:read"
+    scope = "messenger:read,messenger:write,items:info,user:read"
 
     auth_url = (
         "https://avito.ru/oauth?"
-        f"client_id={client_id}&"
-        f"response_type=code&"
-        f"redirect_uri={redirect_uri}&"
-        f"scope={scope}"
+        f"?response_type=code"
+        f"&client_id={client_id}"
+        f"&scope={scope}"
+        f"&redirect_uri={redirect_uri}"
     )
 
     return RedirectResponse(url=auth_url)
