@@ -358,44 +358,24 @@ async def debug_avito_self(current_admin: str = Depends(get_current_admin)):
         logger.exception("Failed to call Avito /core/v1/accounts/self")
         raise HTTPException(status_code=502, detail=str(exc))
 
+# Debug endpoint
 @app.get("/admin/debug/chats")
 async def debug_chats(current_admin: str = Depends(get_current_admin)):
-    """Debug: получить список чатов."""
     tokens = avito_token_store.get_default_tokens()
-    if not tokens:
-        raise HTTPException(status_code=404, detail="No Avito tokens")
-    
-    try:
-        chats = avito_messenger_client.get_chats(tokens.access_token)
-        return {"chats": [c.dict() for c in chats]}
-    except AvitoClientError as exc:
-        raise HTTPException(status_code=502, detail=str(exc))
+    chats = avito_messenger_client.get_chats(tokens.access_token, limit=5)
+    return {"user_id": avito_messenger_client.user_id, "chats": chats}
 
 @app.get("/admin/debug/chat/{chat_id}/messages")
-async def debug_chat_messages(
-    chat_id: str, 
-    current_admin: str = Depends(get_current_admin)
-):
-    """Debug: сообщения в чате."""
-    tokens = avito_token_store.get_default_tokens()
-    if not tokens:
-        raise HTTPException(status_code=404, detail="No Avito tokens")
-    
-    try:
-        messages = avito_messenger_client.get_chat_messages(
-            chat_id=chat_id,
-            access_token=tokens.access_token,
-            limit=5
-        )
-        return {"messages": [m.dict() for m in messages]}
-    except AvitoClientError as exc:
-        raise HTTPException(status_code=502, detail=str(exc))
-
-@app.get("/admin/debug/chat/{chat_id}")
-async def debug_chat(chat_id: str, current_admin: str = Depends(get_current_admin)):
+async def debug_chat_messages(chat_id: str, current_admin: str = Depends(get_current_admin)):
     tokens = avito_token_store.get_default_tokens()
     messages = avito_messenger_client.get_messages(tokens.access_token, chat_id, limit=5)
     return {"chat_id": chat_id, "messages": messages[:3]}
+
+@app.post("/admin/debug/chat/{chat_id}/send")
+async def debug_send_message(chat_id: str, text: str, current_admin: str = Depends(get_current_admin)):
+    tokens = avito_token_store.get_default_tokens()
+    result = avito_messenger_client.send_text(tokens.access_token, chat_id, text)
+    return {"sent": result}
 
 
 @app.get("/ui/project", response_class=HTMLResponse)
