@@ -247,7 +247,7 @@ async def avito_oauth_start():
     scope = "messenger:read,messenger:write,items:info,user:read"
 
     auth_url = (
-        "https://avito.ru/oauth?"
+        "https://avito.ru/oauth"
         f"?response_type=code"
         f"&client_id={client_id}"
         f"&scope={scope}"
