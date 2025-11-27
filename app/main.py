@@ -253,7 +253,7 @@ async def avito_oauth_start():
     # Примерный путь, точный URL нужно выровнять по докам Avito Auth
     auth_url = (
         f"{avito_settings.avito_auth_base_url.rstrip('/')}"
-        f"/oauth"
+        f"/oauth?"
         f"client_id={client_id}&"
         f"response_type=code&"
         f"scope={scope}&"
