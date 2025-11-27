@@ -70,6 +70,7 @@ avito_messenger_client = AvitoMessengerClient(base_url=avito_settings.avito_api_
 avito_token_store = AvitoTokenStore()
 project_store = ProjectStore()
 chat_state = ChatState()
+avito_messenger_client = AvitoMessengerClient()
 
 def _is_within_schedule(project: Project, now_utc: datetime) -> bool:
     """
@@ -389,6 +390,12 @@ async def debug_chat_messages(
         return {"messages": [m.dict() for m in messages]}
     except AvitoClientError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
+
+@app.get("/admin/debug/chat/{chat_id}")
+async def debug_chat(chat_id: str, current_admin: str = Depends(get_current_admin)):
+    tokens = avito_token_store.get_default_tokens()
+    messages = avito_messenger_client.get_messages(tokens.access_token, chat_id, limit=5)
+    return {"chat_id": chat_id, "messages": messages[:3]}
 
 
 @app.get("/ui/project", response_class=HTMLResponse)
