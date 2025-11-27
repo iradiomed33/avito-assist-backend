@@ -29,10 +29,8 @@ class AvitoAuthClient:
     def exchange_code_for_tokens(self, code: str) -> dict:
         """
         Меняет authorization_code на access_token и refresh_token.
-
-        Возвращает словарь с токенами и временем жизни либо бросает AvitoAuthError.
         """
-        url = f"{self.base_url}/oauth/token"
+        url = "https://api.avito.ru/token"
 
         payload = {
             "grant_type": "authorization_code",
@@ -73,4 +71,6 @@ class AvitoAuthClient:
             raise AvitoAuthError("Avito OAuth response missing tokens")
 
         return data
+
+
 
