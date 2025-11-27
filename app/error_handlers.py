@@ -13,16 +13,14 @@ from typing import Union
 logger = logging.getLogger("avito-assist")
 
 
-async def http_exception_handler(request: Request, exc: StarletteHTTPException) -> JSONResponse:
-    """
-    Обработчик HTTP исключений (4xx, 5xx).
-    """
-    logger.error(
-        "HTTP Exception: status=%s path=%s detail=%s",
-        exc.status_code,
-        request.url.path,
-        exc.detail,
-    )
+async def http_exception_handler(request: Request, exc: HTTPException):
+    if exc.status_code == 401 and "WWW-Authenticate" in exc.headers:
+        # Basic Auth — отдаём стандартный ответ с попапом
+        return JSONResponse(
+            status_code=exc.status_code,
+            content={"detail": exc.detail},
+            headers=exc.headers  # ← КРИТИЧНО: сохраняем WWW-Authenticate!
+        )
     
     return JSONResponse(
         status_code=exc.status_code,
