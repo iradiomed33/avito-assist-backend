@@ -284,8 +284,7 @@ async def avito_oauth_callback(code: str | None = None, error: str | None = None
     except AvitoAuthError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
 
-    # TODO: сохранить tokens в хранилище и привязать к пользователю/проекту
-    return {"status": "ok", "tokens": tokens}
+    return RedirectResponse(url="/ui/project", status_code=303)
 
 security = HTTPBasic()
 
