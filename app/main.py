@@ -365,10 +365,7 @@ async def debug_chats(current_admin: str = Depends(get_current_admin)):
         raise HTTPException(status_code=404, detail="No Avito tokens")
     
     try:
-        chats = avito_messenger_client.get_chats(
-            account_id="107238239",  # Твой аккаунт ID
-            access_token=tokens.access_token
-        )
+        chats = avito_messenger_client.get_chats(tokens.access_token)
         return {"chats": [c.dict() for c in chats]}
     except AvitoClientError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
