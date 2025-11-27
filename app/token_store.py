@@ -11,6 +11,7 @@ class AvitoTokens:
     access_token: str
     refresh_token: str
     expires_at: datetime
+    account_id: str | None = None
 
     @classmethod
     def from_oauth_response(cls, data: Dict[str, Any]) -> "AvitoTokens":
@@ -37,6 +38,7 @@ class AvitoTokens:
             "access_token": self.access_token,
             "refresh_token": self.refresh_token,
             "expires_at": self.expires_at.isoformat(),
+            "account_id": self.account_id,
         }
 
     @classmethod
@@ -45,6 +47,7 @@ class AvitoTokens:
             access_token=data["access_token"],
             refresh_token=data["refresh_token"],
             expires_at=datetime.fromisoformat(data["expires_at"]),
+            account_id=data.get("account_id"),
         )
 
 

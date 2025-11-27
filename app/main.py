@@ -10,7 +10,7 @@ from app.clients.avito_client import AvitoMessengerClient, AvitoClientError
 from app.settings import avito_settings
 from app.clients.avito_auth_client import AvitoAuthClient, AvitoAuthError
 import logging
-from app.projects.models import Project
+from app.projects.models import Project, TimeRange
 from app.projects.store import ProjectStore
 from typing import List
 from datetime import datetime
@@ -70,35 +70,68 @@ avito_messenger_client = AvitoMessengerClient(base_url=avito_settings.avito_api_
 avito_token_store = AvitoTokenStore()
 project_store = ProjectStore()
 chat_state = ChatState()
-avito_messenger_client = AvitoMessengerClient()
 
 
 async def avito_auto_poller():
     """Поллер: чаты → Perplexity → автоответ каждые 30 сек"""
     try:
         tokens = avito_token_store.get_default_tokens()
-        chats = avito_messenger_client.get_chats(tokens.access_token, unread_only=True)
-        
+        if not tokens:
+            logger.warning("Нет сохранённых токенов Avito — поллер пропускает итерацию")
+            return
+
+        account_id = tokens.account_id
+        if not account_id:
+            account_info = avito_messenger_client.get_account_info(tokens.access_token)
+            account_id = str(account_info.get("id")) if account_info else None
+            tokens.account_id = account_id
+            avito_token_store.save_default_tokens(tokens)
+
+        if not account_id:
+            logger.error("Не удалось определить account_id Avito, поллер остановлен на итерации")
+            return
+
+        chats = avito_messenger_client.get_chats(
+            access_token=tokens.access_token,
+            account_id=account_id,
+            unread_only=True,
+        )
+
+        project = project_store.get_project("default")
+        system_prompt = build_system_prompt(project, item_context="") if project else ""
+
         for chat in chats[:3]:  # 3 активных чата
-            chat_id = chat["id"]
-            messages = avito_messenger_client.get_messages(tokens.access_token, chat_id, limit=3)
-            
+            chat_id = chat.get("id")
+            messages = avito_messenger_client.get_chat_messages(
+                chat_id=chat_id,
+                access_token=tokens.access_token,
+                limit=3,
+            )
+
             # Последнее сообщение клиента (direction="in")
-            last_client_msg = next((m for m in reversed(messages) if m.get("direction") == "in"), None)
+            last_client_msg = next(
+                (m for m in reversed(messages) if getattr(m, "direction", m.get("direction")) == "in"),
+                None,
+            )
             if last_client_msg:
-                client_text = last_client_msg["content"]["text"]
+                content = getattr(last_client_msg, "content", last_client_msg.get("content", {}))
+                client_text = content.get("text")
+                if not client_text:
+                    continue
                 logger.info(f"Новое сообщение в {chat_id}: {client_text}")
-                
-                # Perplexity генерирует ответ
-                ai_response = await perplexity_ask(f"Клиент: {client_text}\nОтветь как продавец телескопов:")
-                
-                # Отправляем!
-                result = avito_messenger_client.send_text(tokens.access_token, chat_id, ai_response)
+
+                ai_response = perplexity_client.generate_reply(
+                    user_message=client_text,
+                    system_prompt=system_prompt or "Ответь как продавец телескопов",
+                )
+
+                avito_messenger_client.send_text_message(
+                    chat_id=chat_id,
+                    text=ai_response,
+                    access_token=tokens.access_token,
+                )
                 logger.info(f"✅ Отправлен автоответ: {ai_response}")
-                
-                # Помечаем прочитанным
-                avito_messenger_client.mark_read(tokens.access_token, chat_id)
-                
+
     except Exception as e:
         logger.error(f"Поллер ошибка: {e}")
 
@@ -186,14 +219,21 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
         }
 
     now_utc = datetime.now(timezone.utc)
-    if not project.enabled or not _is_within_schedule(project, now_utc):
-        logger.info(
-            "Assistant disabled or out of schedule for project=%s, skipping",
-            project.id,
-        )
+    if not project.enabled:
+        logger.info("Assistant disabled for project=%s, skipping", project.id)
         return {
             "processed": False,
-            "reason": "no_project",
+            "reason": "disabled",
+            "stt_error": None,
+            "assistant_error": None,
+            "messaging_error": None,
+        }
+
+    if not _is_within_schedule(project, now_utc):
+        logger.info("Assistant out of schedule for project=%s, skipping", project.id)
+        return {
+            "processed": False,
+            "reason": "out_of_schedule",
             "stt_error": None,
             "assistant_error": None,
             "messaging_error": None,
@@ -315,8 +355,14 @@ async def avito_oauth_callback(code: str | None = None, error: str | None = None
 
     try:
         tokens = avito_auth_client.exchange_code_for_tokens(code)
-            # Сохраняем токены в файловом хранилище как "default"
         avito_tokens = AvitoTokens.from_oauth_response(tokens)
+        # Сохраняем токены в файловом хранилище как "default"
+        try:
+            account_info = avito_messenger_client.get_account_info(avito_tokens.access_token)
+            avito_tokens.account_id = str(account_info.get("id")) if account_info else None
+        except AvitoClientError as exc:
+            logger.warning("Не удалось получить account_id у Avito: %s", exc)
+
         avito_token_store.save_default_tokens(avito_tokens)
 
     except AvitoAuthError as exc:
@@ -325,12 +371,6 @@ async def avito_oauth_callback(code: str | None = None, error: str | None = None
     return RedirectResponse(url="/ui/project", status_code=303)
 
 security = HTTPBasic()
-
-ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "changeme")  # потом вынесем в .env
-
-if not ADMIN_PASSWORD:
-    raise ValueError("ADMIN_PASSWORD must be set in .env file!")
 
 
 def get_current_admin(credentials: HTTPBasicCredentials = Depends(security)) -> str:
@@ -399,20 +439,34 @@ async def debug_avito_self(current_admin: str = Depends(get_current_admin)):
 @app.get("/admin/debug/chats")
 async def debug_chats(current_admin: str = Depends(get_current_admin)):
     tokens = avito_token_store.get_default_tokens()
-    chats = avito_messenger_client.get_chats(tokens.access_token, limit=5)
-    return {"user_id": avito_messenger_client.user_id, "chats": chats}
+    if not tokens or not tokens.account_id:
+        raise HTTPException(status_code=404, detail="No Avito account id saved")
+    chats = avito_messenger_client.get_chats(
+        access_token=tokens.access_token,
+        account_id=tokens.account_id,
+        limit=5,
+    )
+    return {"account_id": tokens.account_id, "chats": chats}
 
 @app.get("/admin/debug/chat/{chat_id}/messages")
 async def debug_chat_messages(chat_id: str, current_admin: str = Depends(get_current_admin)):
     tokens = avito_token_store.get_default_tokens()
-    messages = avito_messenger_client.get_messages(tokens.access_token, chat_id, limit=5)
+    messages = avito_messenger_client.get_chat_messages(
+        chat_id=chat_id,
+        access_token=tokens.access_token,
+        limit=5,
+    )
     return {"chat_id": chat_id, "messages": messages[:3]}
 
 @app.post("/admin/debug/chat/{chat_id}/send")
 async def debug_send_message(chat_id: str, text: str, current_admin: str = Depends(get_current_admin)):
     tokens = avito_token_store.get_default_tokens()
-    result = avito_messenger_client.send_text(tokens.access_token, chat_id, text)
-    return {"sent": result}
+    avito_messenger_client.send_text_message(
+        chat_id=chat_id,
+        text=text,
+        access_token=tokens.access_token,
+    )
+    return {"sent": True}
 
 
 @app.get("/ui/project", response_class=HTMLResponse)

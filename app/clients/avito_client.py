@@ -33,9 +33,33 @@ class AvitoMessengerClient:
             "https://api.avito.ru",
         )
 
+    def get_account_info(self, access_token: str) -> dict:
+        """Возвращает информацию об аккаунте (id, email и т.д.)."""
+        url = f"{self.base_url}/core/v1/accounts/self"
+        headers = {"Authorization": f"Bearer {access_token}"}
+
+        resp = requests.get(url, headers=headers, timeout=10)
+        if resp.status_code // 100 != 2:
+            logger.error(
+                "Avito API error: GET %s -> %s: %s",
+                url,
+                resp.status_code,
+                resp.text,
+            )
+            raise AvitoClientError(
+                f"Avito API returned {resp.status_code}: {resp.text}"
+            )
+
+        try:
+            return resp.json()
+        except Exception as exc:
+            logger.error("Failed to parse Avito API JSON response: %s", resp.text)
+            raise AvitoClientError("Invalid JSON from Avito API") from exc
+
     def get_chats(
         self,
         access_token: str,
+        account_id: str,
         limit: int = 10,
         unread_only: bool | None = None,
     ) -> list[dict]:
@@ -43,7 +67,7 @@ class AvitoMessengerClient:
         Получить список чатов.
         Если unread_only=True — только непрочитанные (поддерживается Avito API).
         """
-        url = f"{self.base_url}/messenger/v2/accounts/{self.user_id}/chats"
+        url = f"{self.base_url}/messenger/v2/accounts/{account_id}/chats"
 
         params: dict[str, str] = {"limit": str(limit)}
         if unread_only is not None:
@@ -60,12 +84,12 @@ class AvitoMessengerClient:
         return data.get("chats", [])
 
     def get_chat_messages(
-        self, 
-        chat_id: str, 
-        access_token: str, 
+        self,
+        chat_id: str,
+        access_token: str,
         limit: int = 10,
         since_message_id: Optional[str] = None
-    ) -> List[Message]:
+    ) -> List[dict]:
         """Получить сообщения чата (с фильтром по времени/ID)."""
         url = f"{self.base_url}/messenger/v1/chats/{chat_id}/messages"
         headers = {
@@ -76,7 +100,9 @@ class AvitoMessengerClient:
             params["since"] = since_message_id
 
         resp = self._make_request("GET", url, headers=headers, params=params)
-        return [Message(**msg) for msg in resp]
+        if isinstance(resp, dict) and "messages" in resp:
+            return resp["messages"]
+        return resp
 
     def send_text_message(
         self,

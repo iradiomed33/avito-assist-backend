@@ -36,11 +36,11 @@ class AvitoMessageValue(BaseModel):
     - type       — тип сообщения: text, voice, image и т.п.;
     - content    — вложенный объект с реальным содержимым (text и др.).
     """
-    id: str
+    id: str | int
     chat_id: str
-    user_id: str
-    author_id: str
-    created: str
+    user_id: str | int
+    author_id: str | int
+    created: str | int
     type: str
     content: AvitoMessageContent
 
@@ -66,6 +66,6 @@ class AvitoWebhook(BaseModel):
     - payload   — объект с типом и данными события.
     """
     id: str
-    version: int
-    timestamp: str
+    version: int | str
+    timestamp: str | int
     payload: AvitoWebhookPayload
