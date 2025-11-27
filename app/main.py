@@ -328,6 +328,33 @@ def update_project(
     project_store.upsert_project(project)
     return project
 
+@app.get("/admin/debug/avito-self")
+async def debug_avito_self(current_admin: str = Depends(get_current_admin)):
+    """
+    Debug-эндпоинт: проверяет актуальность access_token через GET /core/v1/accounts/self
+    """
+    tokens = avito_token_store.get_default_tokens()
+    if not tokens:
+        raise HTTPException(status_code=404, detail="No Avito tokens found")
+    
+    url = f"{avito_settings.avito_api_base_url}/core/v1/accounts/self"
+    headers = {
+        "Authorization": f"Bearer {tokens.access_token}",
+    }
+    
+    try:
+        resp = requests.get(url, headers=headers, timeout=10)
+        return {
+            "status": "ok",
+            "status_code": resp.status_code,
+            "response": resp.json() if resp.status_code == 200 else resp.text,
+            "expires_at": tokens.expires_at.isoformat(),
+        }
+    except Exception as exc:
+        logger.exception("Failed to call Avito /core/v1/accounts/self")
+        raise HTTPException(status_code=502, detail=str(exc))
+
+
 @app.get("/ui/project", response_class=HTMLResponse)
 async def ui_get_project(
     request: Request,
