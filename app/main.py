@@ -237,28 +237,25 @@ async def avito_webhook_handler(webhook: AvitoWebhook):
 async def avito_oauth_start():
     """
     Старт OAuth2-авторизации Авито.
-
-    Редиректит пользователя на страницу авторизации Авито с параметрами:
-    - client_id
-    -scope={scope}&
-    - redirect_uri
-    - response_type=code
     """
+    client_id = avito_settings.avito_client_id
+    redirect_uri = avito_settings.avito_redirect_uri
+
     if not client_id or not redirect_uri:
         raise HTTPException(status_code=500, detail="Avito OAuth not configured")
 
     scope = "messenger:read messenger:write items:info user:read"
 
     auth_url = (
-        f"{avito_settings.avito_auth_base_url.rstrip('/')}"
-        f"/oauth?"
+        "https://avito.ru/oauth?"
         f"client_id={client_id}&"
         f"response_type=code&"
-        f"scope={scope}&"
-        f"redirect_uri={redirect_uri}"
+        f"redirect_uri={redirect_uri}&"
+        f"scope={scope}"
     )
 
     return RedirectResponse(url=auth_url)
+
 
 
 @app.get("/avito/oauth/callback")
