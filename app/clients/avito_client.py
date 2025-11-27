@@ -33,14 +33,12 @@ class AvitoMessengerClient:
             "https://api.avito.ru",
         )
 
-    def get_chats(self, account_id: str, access_token: str, limit: int = 20) -> List[Chat]:
+    def get_chats(self, access_token: str, limit: int = 20) -> List[Chat]:
         """Получить список чатов аккаунта."""
-        url = f"{self.base_url}/messenger/v1/accounts/{account_id}/chats"
-        headers = {
-            "Authorization": f"Bearer {access_token}",
-        }
+        url = f"{self.base_url}/messenger/v1/chats"  # ← БЕЗ accounts/{id}
+        headers = {"Authorization": f"Bearer {access_token}"}
         params = {"limit": limit}
-
+        
         resp = self._make_request("GET", url, headers=headers, params=params)
         return [Chat(**chat) for chat in resp]
 
