@@ -3,3 +3,4 @@ pytest
 perplexityai
 requests
 pydantic-settings
+python-dotenv

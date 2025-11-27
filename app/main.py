@@ -235,6 +235,7 @@ async def avito_oauth_start():
 
     Редиректит пользователя на страницу авторизации Авито с параметрами:
     - client_id
+    -scope={scope}&
     - redirect_uri
     - response_type=code
     """
