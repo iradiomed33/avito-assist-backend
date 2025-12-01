@@ -91,7 +91,8 @@ class AvitoMessengerClient:
         since_message_id: Optional[str] = None
     ) -> List[dict]:
         """Получить сообщения чата (с фильтром по времени/ID)."""
-        url = f"{self.base_url}/messenger/v1/chats/{chat_id}/messages"
+        url = f"{self.base_url}/messenger/v3/accounts/{self.user_id}/chats/{chat_id}/messages/"
+
         headers = {
             "Authorization": f"Bearer {access_token}",
         }
@@ -111,7 +112,7 @@ class AvitoMessengerClient:
         access_token: str,
     ) -> None:
         """Отправляет текстовое сообщение в чат."""
-        url = f"{self.base_url}/messenger/v1/chats/{chat_id}/messages"
+        url = f"{self.base_url}/messenger/v3/accounts/{self.user_id}/chats/{chat_id}/messages/"
         headers = {
             "Authorization": f"Bearer {access_token}",
             "Content-Type": "application/json",

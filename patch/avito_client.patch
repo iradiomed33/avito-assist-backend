@@ -1,0 +1,135 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/app/clients/avito_client.py b/app/clients/avito_client.py
+index 7e2455ddbbdc517245116b7cdd19907fbc4ccdb7..c7c2b5fcd68d5ae8f0d40d6230b8e85088b58692 100644
+--- a/app/clients/avito_client.py
++++ b/app/clients/avito_client.py
+@@ -11,94 +11,120 @@ class AvitoClientError(Exception):
+     """Доменное исключение для ошибок Avito API."""
+     pass
+ 
+ class Chat(BaseModel):
+     id: str
+     title: str
+     unread_count: int
+     last_message_time: str
+ 
+ class Message(BaseModel):
+     id: str
+     type: str  # "text", "voice"
+     content: Dict[str, Any]
+     time: str
+     author_id: str
+ 
+ class AvitoMessengerClient:
+     """Клиент для работы с Avito Messenger API."""
+ 
+     def __init__(self, base_url: Optional[str] = None) -> None:
+         self.base_url = base_url or os.environ.get(
+             "AVITO_API_BASE_URL",
+             "https://api.avito.ru",
+         )
+ 
++    def get_account_info(self, access_token: str) -> dict:
++        """Возвращает информацию об аккаунте (id, email и т.д.)."""
++        url = f"{self.base_url}/core/v1/accounts/self"
++        headers = {"Authorization": f"Bearer {access_token}"}
++
++        resp = requests.get(url, headers=headers, timeout=10)
++        if resp.status_code // 100 != 2:
++            logger.error(
++                "Avito API error: GET %s -> %s: %s",
++                url,
++                resp.status_code,
++                resp.text,
++            )
++            raise AvitoClientError(
++                f"Avito API returned {resp.status_code}: {resp.text}"
++            )
++
++        try:
++            return resp.json()
++        except Exception as exc:
++            logger.error("Failed to parse Avito API JSON response: %s", resp.text)
++            raise AvitoClientError("Invalid JSON from Avito API") from exc
++
+     def get_chats(
+         self,
+         access_token: str,
++        account_id: str,
+         limit: int = 10,
+         unread_only: bool | None = None,
+     ) -> list[dict]:
+         """
+         Получить список чатов.
+         Если unread_only=True — только непрочитанные (поддерживается Avito API).
+         """
+-        url = f"{self.base_url}/messenger/v2/accounts/{self.user_id}/chats"
++        url = f"{self.base_url}/messenger/v2/accounts/{account_id}/chats"
+ 
+         params: dict[str, str] = {"limit": str(limit)}
+         if unread_only is not None:
+             # Avito ждёт boolean query-параметр unread_only
+             params["unread_only"] = "true" if unread_only else "false"
+ 
+         headers = {
+             "Authorization": f"Bearer {access_token}",
+         }
+ 
+         resp = requests.get(url, headers=headers, params=params, timeout=10)
+         resp.raise_for_status()
+         data = resp.json()
+         return data.get("chats", [])
+ 
+     def get_chat_messages(
+-        self, 
+-        chat_id: str, 
+-        access_token: str, 
++        self,
++        chat_id: str,
++        access_token: str,
+         limit: int = 10,
+         since_message_id: Optional[str] = None
+-    ) -> List[Message]:
++    ) -> List[dict]:
+         """Получить сообщения чата (с фильтром по времени/ID)."""
+         url = f"{self.base_url}/messenger/v3/accounts/{self.user_id}/chats/{chat_id}/messages/"
+         headers = {
+             "Authorization": f"Bearer {access_token}",
+         }
+         params = {"limit": limit}
+         if since_message_id:
+             params["since"] = since_message_id
+ 
+         resp = self._make_request("GET", url, headers=headers, params=params)
+-        return [Message(**msg) for msg in resp]
++        if isinstance(resp, dict) and "messages" in resp:
++            return resp["messages"]
++        return resp
+ 
+     def send_text_message(
+         self,
+         chat_id: str,
+         text: str,
+         access_token: str,
+     ) -> None:
+         """Отправляет текстовое сообщение в чат."""
+         
+         headers = {
+             "Authorization": f"Bearer {access_token}",
+             "Content-Type": "application/json",
+         }
+         payload = {
+             "type": "text",
+             "message": text,
+         }
+ 
+         self._make_request("POST", url, headers=headers, json=payload)
+ 
+     def _make_request(
+         self, 
+         method: str, 
+         url: str, 
+         headers: Dict[str, str], 
+ 
+EOF
+)
