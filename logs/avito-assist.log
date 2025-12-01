@@ -39,3 +39,1003 @@
 2025-11-22 12:20:37 - app.clients.stt_client - [31mERROR[0m - SpeechKit STT returned empty result
 2025-11-22 12:21:28 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=1676538035712 method=GET path=/ client=127.0.0.1
 2025-11-22 12:21:28 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=1676538035712 method=GET path=/ status=200 duration=0.80ms
+2025-11-27 12:29:36 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892107024 method=GET path=/admin/debug/chats client=127.0.0.1
+2025-11-27 12:29:36 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats -> 404: {"message":"route /messenger/v1/chats not found","code":400}
+
+2025-11-27 12:29:36 - avito-assist - [31mERROR[0m - HTTP Exception: status=502 path=/admin/debug/chats detail=Avito API returned 404: {"message":"route /messenger/v1/chats not found","code":400}
+
+2025-11-27 12:29:36 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892107024 method=GET path=/admin/debug/chats status=502 duration=133.16ms
+2025-11-27 12:30:39 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892539600 method=GET path=/admin/debug/chats client=127.0.0.1
+2025-11-27 12:30:39 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/admin/debug/chats detail=Not authenticated
+2025-11-27 12:30:39 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892539600 method=GET path=/admin/debug/chats status=401 duration=1.48ms
+2025-11-27 12:34:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892543872 method=GET path=/ client=127.0.0.1
+2025-11-27 12:34:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892543872 method=GET path=/ status=200 duration=0.81ms
+2025-11-27 12:41:17 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892544112 method=GET path=/api/v2/cmdb/system/admin/admin client=127.0.0.1
+2025-11-27 12:41:17 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/api/v2/cmdb/system/admin/admin detail=Not Found
+2025-11-27 12:41:17 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892544112 method=GET path=/api/v2/cmdb/system/admin/admin status=404 duration=0.63ms
+2025-11-27 12:48:23 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892546128 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 12:48:23 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 12:48:23 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892546128 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.46ms
+2025-11-27 12:50:44 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892547520 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 12:50:44 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 12:50:44 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892547520 method=GET path=/wp-admin/setup-config.php status=404 duration=0.56ms
+2025-11-27 12:51:23 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892549152 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 12:51:23 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 12:51:23 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892549152 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.46ms
+2025-11-27 12:51:32 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892550736 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 12:51:32 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 12:51:32 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892550736 method=GET path=/wp-admin/setup-config.php status=404 duration=0.56ms
+2025-11-27 13:13:23 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892551600 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:13:23 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:13:23 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892551600 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.41ms
+2025-11-27 13:14:07 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892549056 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:14:07 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:14:07 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892549056 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.41ms
+2025-11-27 13:16:27 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892547424 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:16:27 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:16:27 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892547424 method=GET path=/wp-admin/setup-config.php status=404 duration=0.44ms
+2025-11-27 13:16:41 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892545696 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:16:41 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:16:41 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892545696 method=GET path=/wp-admin/setup-config.php status=404 duration=0.39ms
+2025-11-27 13:35:23 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892544880 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:35:23 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:35:23 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892544880 method=GET path=/wp-admin/setup-config.php status=404 duration=0.42ms
+2025-11-27 13:36:27 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892552848 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:36:27 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:36:27 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892552848 method=GET path=/wp-admin/setup-config.php status=404 duration=0.47ms
+2025-11-27 13:37:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957892554480 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:37:20 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:37:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957892554480 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.74ms
+2025-11-27 13:38:24 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848614240 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:38:24 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:38:24 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848614240 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.39ms
+2025-11-27 13:40:28 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848613616 method=GET path=/ client=127.0.0.1
+2025-11-27 13:40:28 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848613616 method=GET path=/ status=200 duration=0.40ms
+2025-11-27 13:40:57 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848615920 method=GET path=/favicon.ico client=127.0.0.1
+2025-11-27 13:40:57 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/favicon.ico detail=Not Found
+2025-11-27 13:40:57 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848615920 method=GET path=/favicon.ico status=404 duration=0.47ms
+2025-11-27 13:53:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848616400 method=GET path=/ client=127.0.0.1
+2025-11-27 13:53:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848616400 method=GET path=/ status=200 duration=0.47ms
+2025-11-27 13:53:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848617936 method=GET path=/favicon.ico client=127.0.0.1
+2025-11-27 13:53:21 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/favicon.ico detail=Not Found
+2025-11-27 13:53:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848617936 method=GET path=/favicon.ico status=404 duration=0.40ms
+2025-11-27 13:53:31 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848619424 method=GET path=/ client=127.0.0.1
+2025-11-27 13:53:31 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848619424 method=GET path=/ status=200 duration=0.40ms
+2025-11-27 13:53:38 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848620624 method=GET path=/security.txt client=127.0.0.1
+2025-11-27 13:53:38 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/security.txt detail=Not Found
+2025-11-27 13:53:38 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848620624 method=GET path=/security.txt status=404 duration=0.40ms
+2025-11-27 13:57:32 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848622736 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:57:32 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:57:32 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848622736 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.52ms
+2025-11-27 13:57:36 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848624320 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:57:36 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:57:36 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848624320 method=GET path=/wp-admin/setup-config.php status=404 duration=0.45ms
+2025-11-27 13:58:34 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848626000 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 13:58:34 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 13:58:34 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848626000 method=GET path=/wp-admin/setup-config.php status=404 duration=0.36ms
+2025-11-27 14:00:26 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848628640 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:00:26 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:00:26 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848628640 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.73ms
+2025-11-27 14:15:04 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848624944 method=GET path=/.git/config client=127.0.0.1
+2025-11-27 14:15:04 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/.git/config detail=Not Found
+2025-11-27 14:15:04 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848624944 method=GET path=/.git/config status=404 duration=0.50ms
+2025-11-27 14:21:54 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848622880 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:21:54 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:21:54 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848622880 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.49ms
+2025-11-27 14:22:29 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848623648 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:22:29 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:22:29 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848623648 method=GET path=/wp-admin/setup-config.php status=404 duration=0.38ms
+2025-11-27 14:23:03 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848622064 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:23:03 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:23:03 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848622064 method=GET path=/wp-admin/setup-config.php status=404 duration=0.37ms
+2025-11-27 14:23:03 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=133957848619376 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:23:03 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:23:03 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=133957848619376 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.53ms
+2025-11-27 14:25:39 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554332576 method=GET path=/ client=127.0.0.1
+2025-11-27 14:25:39 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554332576 method=GET path=/ status=200 duration=1.18ms
+2025-11-27 14:29:26 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554699760 method=GET path=/avito/oauth/start client=127.0.0.1
+2025-11-27 14:29:26 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554699760 method=GET path=/avito/oauth/start status=307 duration=0.41ms
+2025-11-27 14:29:26 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554701392 method=GET path=/avito/oauth/start client=127.0.0.1
+2025-11-27 14:29:26 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554701392 method=GET path=/avito/oauth/start status=307 duration=0.34ms
+2025-11-27 14:29:32 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554703648 method=GET path=/avito/oauth/callback client=127.0.0.1
+2025-11-27 14:29:32 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554703648 method=GET path=/avito/oauth/callback status=200 duration=146.55ms
+2025-11-27 14:30:13 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554703552 method=GET path=/admin/debug/avito-self client=127.0.0.1
+2025-11-27 14:30:13 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554703552 method=GET path=/admin/debug/avito-self status=200 duration=126.08ms
+2025-11-27 14:31:45 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554333584 method=GET path=/admin/debug/avito-self client=127.0.0.1
+2025-11-27 14:31:45 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/admin/debug/avito-self detail=Not authenticated
+2025-11-27 14:31:45 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554333584 method=GET path=/admin/debug/avito-self status=401 duration=0.50ms
+2025-11-27 14:37:34 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554704368 method=GET path=/developmentserver/metadatauploader client=127.0.0.1
+2025-11-27 14:37:34 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/developmentserver/metadatauploader detail=Not Found
+2025-11-27 14:37:34 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554704368 method=GET path=/developmentserver/metadatauploader status=404 duration=0.44ms
+2025-11-27 14:43:58 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554708064 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:43:58 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:43:58 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554708064 method=GET path=/wp-admin/setup-config.php status=404 duration=0.36ms
+2025-11-27 14:44:48 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554708352 method=GET path=/admin/debug/avito-self client=127.0.0.1
+2025-11-27 14:44:48 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554708352 method=GET path=/admin/debug/avito-self status=200 duration=149.32ms
+2025-11-27 14:44:58 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554700096 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:44:58 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:44:58 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554700096 method=GET path=/wp-admin/setup-config.php status=404 duration=0.41ms
+2025-11-27 14:45:23 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554710608 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:45:23 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:45:23 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554710608 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.45ms
+2025-11-27 14:46:46 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554712048 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 14:46:46 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 14:46:46 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554712048 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.55ms
+2025-11-27 14:46:56 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554713008 method=POST path=/webhooks/avito client=127.0.0.1
+2025-11-27 14:46:56 - avito-assist - [31mERROR[0m - Validation Error: path=/webhooks/avito errors=[{'type': 'int_parsing', 'loc': ('body', 'version'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'v3.0.0'}, {'type': 'string_type', 'loc': ('body', 'timestamp'), 'msg': 'Input should be a valid string', 'input': 1764244016}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'user_id'), 'msg': 'Input should be a valid string', 'input': 107238239}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'author_id'), 'msg': 'Input should be a valid string', 'input': 107238239}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'created'), 'msg': 'Input should be a valid string', 'input': 1764244015}]
+2025-11-27 14:46:56 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554713008 method=POST path=/webhooks/avito status=422 duration=1.19ms
+2025-11-27 14:50:04 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554882384 method=GET path=/.env client=127.0.0.1
+2025-11-27 14:50:04 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/.env detail=Not Found
+2025-11-27 14:50:04 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554882384 method=GET path=/.env status=404 duration=0.44ms
+2025-11-27 15:06:02 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554883728 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:06:02 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:06:02 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554883728 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.45ms
+2025-11-27 15:06:06 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554885792 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:06:06 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:06:06 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554885792 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.41ms
+2025-11-27 15:07:09 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554887424 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:07:09 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:07:09 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554887424 method=GET path=/wp-admin/setup-config.php status=404 duration=0.42ms
+2025-11-27 15:07:29 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=129216554889008 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:07:29 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:07:29 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=129216554889008 method=GET path=/wp-admin/setup-config.php status=404 duration=0.49ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208335936 method=GET path=/ client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208335936 method=GET path=/ status=200 duration=0.67ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208335360 method=GET path=//wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208335360 method=GET path=//wp-includes/wlwmanifest.xml status=404 duration=0.47ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208588656 method=GET path=//xmlrpc.php client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//xmlrpc.php detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208588656 method=GET path=//xmlrpc.php status=404 duration=0.52ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208589136 method=GET path=/ client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208589136 method=GET path=/ status=200 duration=0.40ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208590000 method=GET path=//blog/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//blog/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208590000 method=GET path=//blog/wp-includes/wlwmanifest.xml status=404 duration=0.45ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208590720 method=GET path=//web/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//web/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208590720 method=GET path=//web/wp-includes/wlwmanifest.xml status=404 duration=0.54ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208592064 method=GET path=//wordpress/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wordpress/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208592064 method=GET path=//wordpress/wp-includes/wlwmanifest.xml status=404 duration=0.52ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208593024 method=GET path=//website/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//website/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208593024 method=GET path=//website/wp-includes/wlwmanifest.xml status=404 duration=0.41ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208594176 method=GET path=//wp/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208594176 method=GET path=//wp/wp-includes/wlwmanifest.xml status=404 duration=0.36ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208594944 method=GET path=//news/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//news/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208594944 method=GET path=//news/wp-includes/wlwmanifest.xml status=404 duration=0.40ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208596192 method=GET path=//2018/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//2018/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208596192 method=GET path=//2018/wp-includes/wlwmanifest.xml status=404 duration=0.73ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208728240 method=GET path=//2019/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//2019/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208728240 method=GET path=//2019/wp-includes/wlwmanifest.xml status=404 duration=0.48ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208729152 method=GET path=//shop/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//shop/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208729152 method=GET path=//shop/wp-includes/wlwmanifest.xml status=404 duration=0.44ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208729920 method=GET path=//wp1/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp1/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208729920 method=GET path=//wp1/wp-includes/wlwmanifest.xml status=404 duration=0.37ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208730928 method=GET path=//test/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//test/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208730928 method=GET path=//test/wp-includes/wlwmanifest.xml status=404 duration=0.36ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208732128 method=GET path=//media/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//media/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208732128 method=GET path=//media/wp-includes/wlwmanifest.xml status=404 duration=0.37ms
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208732848 method=GET path=//wp2/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp2/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208732848 method=GET path=//wp2/wp-includes/wlwmanifest.xml status=404 duration=0.38ms
+2025-11-27 15:18:15 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208734000 method=GET path=//site/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:15 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//site/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:15 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208734000 method=GET path=//site/wp-includes/wlwmanifest.xml status=404 duration=0.41ms
+2025-11-27 15:18:15 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208734720 method=GET path=//cms/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:15 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//cms/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:15 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208734720 method=GET path=//cms/wp-includes/wlwmanifest.xml status=404 duration=0.52ms
+2025-11-27 15:18:15 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208735824 method=GET path=//sito/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 15:18:15 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//sito/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 15:18:15 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208735824 method=GET path=//sito/wp-includes/wlwmanifest.xml status=404 duration=0.82ms
+2025-11-27 15:27:52 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208594848 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:27:52 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:27:52 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208594848 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=1.42ms
+2025-11-27 15:27:57 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208591536 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:27:57 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:27:57 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208591536 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.48ms
+2025-11-27 15:29:50 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208590288 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:29:50 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:29:50 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208590288 method=GET path=/wp-admin/setup-config.php status=404 duration=0.55ms
+2025-11-27 15:31:17 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208215760 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:31:17 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:31:17 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208215760 method=GET path=/wp-admin/setup-config.php status=404 duration=0.44ms
+2025-11-27 15:49:58 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208736928 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:49:58 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:49:58 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208736928 method=GET path=/wp-admin/setup-config.php status=404 duration=0.39ms
+2025-11-27 15:50:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208732704 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:50:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:50:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208732704 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.40ms
+2025-11-27 15:51:22 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208732416 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:51:22 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:51:22 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208732416 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.48ms
+2025-11-27 15:51:58 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208729200 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 15:51:58 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 15:51:58 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208729200 method=GET path=/wp-admin/setup-config.php status=404 duration=0.47ms
+2025-11-27 16:03:38 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208737312 method=GET path=/wp-login.php client=127.0.0.1
+2025-11-27 16:03:38 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-login.php detail=Not Found
+2025-11-27 16:03:38 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208737312 method=GET path=/wp-login.php status=404 duration=0.45ms
+2025-11-27 16:10:59 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208728528 method=GET path=//wp-includes/ID3/license.txt client=127.0.0.1
+2025-11-27 16:10:59 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp-includes/ID3/license.txt detail=Not Found
+2025-11-27 16:10:59 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208728528 method=GET path=//wp-includes/ID3/license.txt status=404 duration=0.43ms
+2025-11-27 16:11:00 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208739808 method=GET path=//feed/ client=127.0.0.1
+2025-11-27 16:11:00 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//feed/ detail=Not Found
+2025-11-27 16:11:00 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208739808 method=GET path=//feed/ status=404 duration=0.41ms
+2025-11-27 16:11:02 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208740288 method=GET path=//xmlrpc.php client=127.0.0.1
+2025-11-27 16:11:02 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//xmlrpc.php detail=Not Found
+2025-11-27 16:11:02 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208740288 method=GET path=//xmlrpc.php status=404 duration=0.41ms
+2025-11-27 16:11:03 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208741488 method=GET path=//blog/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:03 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//blog/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:03 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208741488 method=GET path=//blog/wp-includes/wlwmanifest.xml status=404 duration=0.68ms
+2025-11-27 16:11:05 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208742688 method=GET path=//web/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:05 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//web/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:05 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208742688 method=GET path=//web/wp-includes/wlwmanifest.xml status=404 duration=0.38ms
+2025-11-27 16:11:06 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208743456 method=GET path=//wordpress/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:06 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wordpress/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:06 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208743456 method=GET path=//wordpress/wp-includes/wlwmanifest.xml status=404 duration=0.44ms
+2025-11-27 16:11:08 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208777920 method=GET path=//wp/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:08 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:08 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208777920 method=GET path=//wp/wp-includes/wlwmanifest.xml status=404 duration=1.02ms
+2025-11-27 16:11:09 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208778160 method=GET path=//2020/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:09 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//2020/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:09 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208778160 method=GET path=//2020/wp-includes/wlwmanifest.xml status=404 duration=0.55ms
+2025-11-27 16:11:11 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208779312 method=GET path=//2019/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:11 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//2019/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:11 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208779312 method=GET path=//2019/wp-includes/wlwmanifest.xml status=404 duration=0.39ms
+2025-11-27 16:11:12 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208780080 method=GET path=//2021/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:12 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//2021/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:12 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208780080 method=GET path=//2021/wp-includes/wlwmanifest.xml status=404 duration=0.46ms
+2025-11-27 16:11:14 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208781088 method=GET path=//shop/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:14 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//shop/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:14 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208781088 method=GET path=//shop/wp-includes/wlwmanifest.xml status=404 duration=0.55ms
+2025-11-27 16:11:16 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208781664 method=GET path=//wp1/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:16 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp1/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:16 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208781664 method=GET path=//wp1/wp-includes/wlwmanifest.xml status=404 duration=0.57ms
+2025-11-27 16:11:18 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208782912 method=GET path=//test/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:18 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//test/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:18 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208782912 method=GET path=//test/wp-includes/wlwmanifest.xml status=404 duration=0.70ms
+2025-11-27 16:11:19 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208743312 method=GET path=//site/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:19 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//site/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:19 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208743312 method=GET path=//site/wp-includes/wlwmanifest.xml status=404 duration=0.51ms
+2025-11-27 16:11:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208742736 method=GET path=//cms/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 16:11:21 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//cms/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 16:11:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208742736 method=GET path=//cms/wp-includes/wlwmanifest.xml status=404 duration=1.05ms
+2025-11-27 16:14:49 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208738896 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 16:14:49 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 16:14:49 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208738896 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.40ms
+2025-11-27 16:15:40 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208728192 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 16:15:40 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 16:15:40 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208728192 method=GET path=/wp-admin/setup-config.php status=404 duration=0.45ms
+2025-11-27 16:16:09 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208730400 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 16:16:09 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 16:16:09 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208730400 method=GET path=/wp-admin/setup-config.php status=404 duration=0.43ms
+2025-11-27 16:16:43 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208730832 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 16:16:43 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 16:16:43 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208730832 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.36ms
+2025-11-27 16:27:44 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208733904 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 16:27:44 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 16:27:44 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208733904 method=GET path=/ui/project status=401 duration=0.61ms
+2025-11-27 16:36:36 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208733568 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 16:36:36 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 16:36:36 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208733568 method=GET path=/wp-admin/setup-config.php status=404 duration=0.43ms
+2025-11-27 16:36:43 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208736688 method=GET path=/cacti/cmd_realtime.php client=127.0.0.1
+2025-11-27 16:36:43 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/cacti/cmd_realtime.php detail=Not Found
+2025-11-27 16:36:43 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208591584 method=GET path=/admin/config client=127.0.0.1
+2025-11-27 16:36:43 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/admin/config detail=Not Found
+2025-11-27 16:36:43 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208594992 method=GET path=/pms client=127.0.0.1
+2025-11-27 16:36:43 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208736688 method=GET path=/cacti/cmd_realtime.php status=404 duration=1.92ms
+2025-11-27 16:36:43 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/pms detail=Not Found
+2025-11-27 16:36:43 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208591584 method=GET path=/admin/config status=404 duration=1.38ms
+2025-11-27 16:36:43 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208594992 method=GET path=/pms status=404 duration=1.17ms
+2025-11-27 16:37:36 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208594272 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 16:37:36 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 16:37:36 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208594272 method=GET path=/wp-admin/setup-config.php status=404 duration=0.60ms
+2025-11-27 16:38:07 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208587840 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 16:38:07 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 16:38:07 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208587840 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.62ms
+2025-11-27 16:40:27 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208595184 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 16:40:27 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 16:40:27 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208595184 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.69ms
+2025-11-27 16:44:27 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208783440 method=GET path=/.git/HEAD client=127.0.0.1
+2025-11-27 16:44:27 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/.git/HEAD detail=Not Found
+2025-11-27 16:44:27 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208783440 method=GET path=/.git/HEAD status=404 duration=0.38ms
+2025-11-27 16:46:52 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208783776 method=GET path=/wp-login.php client=127.0.0.1
+2025-11-27 16:46:52 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-login.php detail=Not Found
+2025-11-27 16:46:52 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208783776 method=GET path=/wp-login.php status=404 duration=0.38ms
+2025-11-27 16:47:27 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208780128 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 16:47:27 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 16:47:27 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208780128 method=GET path=/ui/project status=401 duration=0.61ms
+2025-11-27 16:47:49 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208778208 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 16:47:49 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 16:47:49 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208778208 method=GET path=/ui/project status=401 duration=0.47ms
+2025-11-27 16:49:27 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208784928 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 16:49:27 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 16:49:27 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208784928 method=GET path=/ui/project status=401 duration=0.47ms
+2025-11-27 16:49:30 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208785504 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 16:49:30 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 16:49:30 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208785504 method=GET path=/ui/project status=401 duration=0.55ms
+2025-11-27 16:49:31 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208778736 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 16:49:31 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 16:49:31 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208778736 method=GET path=/ui/project status=401 duration=0.55ms
+2025-11-27 16:49:31 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208787760 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 16:49:31 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 16:49:31 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208787760 method=GET path=/ui/project status=401 duration=0.66ms
+2025-11-27 16:56:59 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208788768 method=GET path=/avito/oauth/callback client=127.0.0.1
+2025-11-27 16:56:59 - app.clients.avito_auth_client - [31mERROR[0m - Avito OAuth token endpoint returned non-2xx status: 403, body={"error":"invalid_grant","error_description":"Can't get auth data. Try request later"}
+
+2025-11-27 16:56:59 - avito-assist - [31mERROR[0m - HTTP Exception: status=502 path=/avito/oauth/callback detail=Avito OAuth token endpoint returned status 403
+2025-11-27 16:56:59 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208788768 method=GET path=/avito/oauth/callback status=502 duration=135.49ms
+2025-11-27 16:57:02 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208595664 method=GET path=/avito/oauth/callback client=127.0.0.1
+2025-11-27 16:57:02 - app.clients.avito_auth_client - [31mERROR[0m - Avito OAuth token endpoint returned non-2xx status: 403, body={"error":"invalid_grant","error_description":"Can't get auth data. Try request later"}
+
+2025-11-27 16:57:02 - avito-assist - [31mERROR[0m - HTTP Exception: status=502 path=/avito/oauth/callback detail=Avito OAuth token endpoint returned status 403
+2025-11-27 16:57:02 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208595664 method=GET path=/avito/oauth/callback status=502 duration=87.35ms
+2025-11-27 16:57:05 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208596960 method=GET path=/avito/oauth/callback client=127.0.0.1
+2025-11-27 16:57:05 - app.clients.avito_auth_client - [31mERROR[0m - Avito OAuth token endpoint returned non-2xx status: 403, body={"error":"invalid_grant","error_description":"Can't get auth data. Try request later"}
+
+2025-11-27 16:57:05 - avito-assist - [31mERROR[0m - HTTP Exception: status=502 path=/avito/oauth/callback detail=Avito OAuth token endpoint returned status 403
+2025-11-27 16:57:05 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208596960 method=GET path=/avito/oauth/callback status=502 duration=173.01ms
+2025-11-27 16:57:17 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208592304 method=GET path=/avito/oauth/callback client=127.0.0.1
+2025-11-27 16:57:17 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208592304 method=GET path=/avito/oauth/callback status=200 duration=153.44ms
+2025-11-27 17:01:09 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208731504 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 17:01:09 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 17:01:09 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208731504 method=GET path=/wp-admin/setup-config.php status=404 duration=0.50ms
+2025-11-27 17:01:34 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208735872 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 17:01:34 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 17:01:34 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208735872 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.64ms
+2025-11-27 17:01:48 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208730544 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 17:01:48 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 17:01:48 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208730544 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.38ms
+2025-11-27 17:03:44 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208735104 method=GET path=/ client=127.0.0.1
+2025-11-27 17:03:44 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208735104 method=GET path=/ status=200 duration=0.33ms
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208737984 method=GET path=//wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:45 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208737984 method=GET path=//wp-includes/wlwmanifest.xml status=404 duration=0.34ms
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208731648 method=GET path=//xmlrpc.php client=127.0.0.1
+2025-11-27 17:03:45 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//xmlrpc.php detail=Not Found
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208731648 method=GET path=//xmlrpc.php status=404 duration=0.42ms
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208740480 method=GET path=/ client=127.0.0.1
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208740480 method=GET path=/ status=200 duration=0.39ms
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208739568 method=GET path=//blog/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:45 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//blog/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208739568 method=GET path=//blog/wp-includes/wlwmanifest.xml status=404 duration=0.37ms
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208742544 method=GET path=//web/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:45 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//web/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:45 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208742544 method=GET path=//web/wp-includes/wlwmanifest.xml status=404 duration=0.44ms
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208740816 method=GET path=//wordpress/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:46 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wordpress/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208740816 method=GET path=//wordpress/wp-includes/wlwmanifest.xml status=404 duration=0.39ms
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208744320 method=GET path=//website/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:46 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//website/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208744320 method=GET path=//website/wp-includes/wlwmanifest.xml status=404 duration=0.44ms
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208205248 method=GET path=//wp/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:46 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208205248 method=GET path=//wp/wp-includes/wlwmanifest.xml status=404 duration=0.53ms
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208217536 method=GET path=//news/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:46 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//news/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208217536 method=GET path=//news/wp-includes/wlwmanifest.xml status=404 duration=0.48ms
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208789776 method=GET path=//2020/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:46 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//2020/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:46 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208789776 method=GET path=//2020/wp-includes/wlwmanifest.xml status=404 duration=0.86ms
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208790928 method=GET path=//2019/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:47 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//2019/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208790928 method=GET path=//2019/wp-includes/wlwmanifest.xml status=404 duration=0.44ms
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208789248 method=GET path=//shop/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:47 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//shop/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208789248 method=GET path=//shop/wp-includes/wlwmanifest.xml status=404 duration=0.38ms
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208787712 method=GET path=//wp1/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:47 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp1/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208787712 method=GET path=//wp1/wp-includes/wlwmanifest.xml status=404 duration=0.37ms
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208785840 method=GET path=//test/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:47 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//test/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208785840 method=GET path=//test/wp-includes/wlwmanifest.xml status=404 duration=0.44ms
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208784736 method=GET path=//wp2/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:47 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//wp2/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:47 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208784736 method=GET path=//wp2/wp-includes/wlwmanifest.xml status=404 duration=0.45ms
+2025-11-27 17:03:48 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208779264 method=GET path=//site/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:48 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//site/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:48 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208779264 method=GET path=//site/wp-includes/wlwmanifest.xml status=404 duration=0.74ms
+2025-11-27 17:03:48 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208219120 method=GET path=//cms/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:48 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//cms/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:48 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208219120 method=GET path=//cms/wp-includes/wlwmanifest.xml status=404 duration=0.58ms
+2025-11-27 17:03:48 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208743120 method=GET path=//sito/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 17:03:48 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=//sito/wp-includes/wlwmanifest.xml detail=Not Found
+2025-11-27 17:03:48 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208743120 method=GET path=//sito/wp-includes/wlwmanifest.xml status=404 duration=0.89ms
+2025-11-27 17:04:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=134408208742352 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 17:04:33 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 17:04:33 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=134408208742352 method=GET path=/wp-admin/setup-config.php status=404 duration=0.37ms
+2025-11-27 17:19:35 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=128430439396944 method=GET path=/avito/oauth/start client=127.0.0.1
+2025-11-27 17:19:35 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=128430439396944 method=GET path=/avito/oauth/start status=307 duration=0.43ms
+2025-11-27 17:19:36 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=128430439397328 method=GET path=/avito/oauth/start client=127.0.0.1
+2025-11-27 17:19:36 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=128430439397328 method=GET path=/avito/oauth/start status=307 duration=0.38ms
+2025-11-27 17:19:40 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=128430439781520 method=GET path=/avito/oauth/callback client=127.0.0.1
+2025-11-27 17:19:40 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=128430439781520 method=GET path=/avito/oauth/callback status=303 duration=121.86ms
+2025-11-27 17:19:40 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=128430439783200 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:19:40 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:19:40 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=128430439783200 method=GET path=/ui/project status=401 duration=0.51ms
+2025-11-27 17:20:32 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=128430439787328 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:20:32 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:20:32 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=128430439787328 method=GET path=/ui/project status=401 duration=0.75ms
+2025-11-27 17:21:02 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=128430439788864 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:21:02 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:21:02 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=128430439788864 method=GET path=/ui/project status=401 duration=0.62ms
+2025-11-27 17:23:25 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=128430439790448 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 17:23:25 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 17:23:25 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=128430439790448 method=GET path=/wp-admin/setup-config.php status=404 duration=0.54ms
+2025-11-27 17:25:19 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949222998720 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:25:19 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:25:19 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949222998720 method=GET path=/ui/project status=401 duration=0.93ms
+2025-11-27 17:25:24 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223382768 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:25:24 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:25:24 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223382768 method=GET path=/ui/project status=401 duration=0.58ms
+2025-11-27 17:25:30 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223384592 method=GET path=/avito/oauth/callback client=127.0.0.1
+2025-11-27 17:25:30 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223384592 method=GET path=/avito/oauth/callback status=303 duration=149.79ms
+2025-11-27 17:25:30 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223385552 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:25:30 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:25:30 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223385552 method=GET path=/ui/project status=401 duration=0.62ms
+2025-11-27 17:26:56 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223392416 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 17:26:56 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 17:26:56 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223392416 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.43ms
+2025-11-27 17:27:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223394192 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 17:27:21 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wordpress/wp-admin/setup-config.php detail=Not Found
+2025-11-27 17:27:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223394192 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.47ms
+2025-11-27 17:27:26 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223559488 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 17:27:26 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/wp-admin/setup-config.php detail=Not Found
+2025-11-27 17:27:26 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223559488 method=GET path=/wp-admin/setup-config.php status=404 duration=1.91ms
+2025-11-27 17:31:02 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223560784 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:31:02 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:31:02 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223560784 method=GET path=/ui/project status=401 duration=1.33ms
+2025-11-27 17:34:45 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223393904 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:34:45 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223393904 method=GET path=/ui/project status=200 duration=10.75ms
+2025-11-27 17:35:16 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223389824 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:35:16 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:35:16 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223389824 method=GET path=/ui/project status=401 duration=0.52ms
+2025-11-27 17:35:17 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223386368 method=GET path=/favicon.ico client=127.0.0.1
+2025-11-27 17:35:17 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/favicon.ico detail=Not Found
+2025-11-27 17:35:17 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223386368 method=GET path=/favicon.ico status=404 duration=0.42ms
+2025-11-27 17:35:19 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223382768 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:35:19 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:35:19 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223382768 method=GET path=/ui/project status=401 duration=0.46ms
+2025-11-27 17:35:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223386560 method=GET path=/favicon.ico client=127.0.0.1
+2025-11-27 17:35:20 - avito-assist - [31mERROR[0m - HTTP Exception: status=404 path=/favicon.ico detail=Not Found
+2025-11-27 17:35:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223386560 method=GET path=/favicon.ico status=404 duration=0.40ms
+2025-11-27 17:35:37 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223561024 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:35:37 - avito-assist - [31mERROR[0m - HTTP Exception: status=401 path=/ui/project detail=Not authenticated
+2025-11-27 17:35:37 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223561024 method=GET path=/ui/project status=401 duration=0.59ms
+2025-11-27 17:39:07 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=123949223561408 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:39:07 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=123949223561408 method=GET path=/ui/project status=200 duration=1.49ms
+2025-11-27 17:54:23 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041365616 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:54:23 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041365616 method=GET path=/ui/project status=401 duration=1.55ms
+2025-11-27 17:54:41 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041750000 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:54:41 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041750000 method=GET path=/ui/project status=200 duration=9.42ms
+2025-11-27 17:54:53 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041751536 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 17:54:53 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041751536 method=POST path=/ui/project status=303 duration=2.62ms
+2025-11-27 17:54:53 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041755424 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:54:53 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041755424 method=GET path=/ui/project status=200 duration=0.92ms
+2025-11-27 17:54:58 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041928592 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 17:54:58 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041928592 method=POST path=/ui/project status=303 duration=2.75ms
+2025-11-27 17:54:58 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041751584 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:54:58 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041751584 method=GET path=/ui/project status=200 duration=1.41ms
+2025-11-27 17:55:03 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041749712 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 17:55:03 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041749712 method=POST path=/ui/project status=303 duration=1.98ms
+2025-11-27 17:55:03 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041927632 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:55:03 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041927632 method=GET path=/ui/project status=200 duration=1.03ms
+2025-11-27 17:55:10 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041933680 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 17:55:10 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041933680 method=POST path=/ui/project status=303 duration=1.98ms
+2025-11-27 17:55:10 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041936896 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:55:10 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041936896 method=GET path=/ui/project status=200 duration=1.15ms
+2025-11-27 17:55:19 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041939296 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 17:55:19 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041939296 method=POST path=/ui/project status=303 duration=2.47ms
+2025-11-27 17:55:19 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041940400 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:55:19 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041940400 method=GET path=/ui/project status=200 duration=1.41ms
+2025-11-27 17:55:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997953936 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 17:55:33 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997953936 method=POST path=/ui/project status=303 duration=2.14ms
+2025-11-27 17:55:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041751536 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 17:55:33 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041751536 method=GET path=/ui/project status=200 duration=1.02ms
+2025-11-27 18:03:09 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041752352 method=GET path=/ client=127.0.0.1
+2025-11-27 18:03:09 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041752352 method=GET path=/ status=200 duration=0.40ms
+2025-11-27 18:03:09 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041541664 method=GET path=/ client=127.0.0.1
+2025-11-27 18:03:09 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041541664 method=GET path=/ status=200 duration=0.41ms
+2025-11-27 18:04:15 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041941696 method=GET path=/admin/config.php client=127.0.0.1
+2025-11-27 18:04:15 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041941696 method=GET path=/admin/config.php status=404 duration=1.26ms
+2025-11-27 18:09:09 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041938960 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 18:09:09 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041938960 method=GET path=/wp-admin/setup-config.php status=404 duration=0.38ms
+2025-11-27 18:09:23 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041933296 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 18:09:23 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041933296 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.45ms
+2025-11-27 18:10:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041937712 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 18:10:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041937712 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.39ms
+2025-11-27 18:10:49 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041929936 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 18:10:49 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041929936 method=GET path=/wp-admin/setup-config.php status=404 duration=0.40ms
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041928832 method=GET path=/ client=127.0.0.1
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041928832 method=GET path=/ status=200 duration=0.43ms
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041932384 method=GET path=//wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041932384 method=GET path=//wp-includes/wlwmanifest.xml status=404 duration=0.37ms
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041930848 method=GET path=//xmlrpc.php client=127.0.0.1
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041930848 method=GET path=//xmlrpc.php status=404 duration=0.40ms
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041931280 method=GET path=/ client=127.0.0.1
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041931280 method=GET path=/ status=200 duration=0.36ms
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997954176 method=GET path=//blog/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997954176 method=GET path=//blog/wp-includes/wlwmanifest.xml status=404 duration=0.30ms
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997954656 method=GET path=//web/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997954656 method=GET path=//web/wp-includes/wlwmanifest.xml status=404 duration=0.40ms
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997956768 method=GET path=//wordpress/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:20 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997956768 method=GET path=//wordpress/wp-includes/wlwmanifest.xml status=404 duration=0.35ms
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997952304 method=GET path=//website/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997952304 method=GET path=//website/wp-includes/wlwmanifest.xml status=404 duration=0.34ms
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997957104 method=GET path=//wp/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997957104 method=GET path=//wp/wp-includes/wlwmanifest.xml status=404 duration=0.38ms
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997958112 method=GET path=//news/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997958112 method=GET path=//news/wp-includes/wlwmanifest.xml status=404 duration=0.40ms
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997959120 method=GET path=//2020/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997959120 method=GET path=//2020/wp-includes/wlwmanifest.xml status=404 duration=0.38ms
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997960128 method=GET path=//2019/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997960128 method=GET path=//2019/wp-includes/wlwmanifest.xml status=404 duration=0.42ms
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997961136 method=GET path=//shop/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997961136 method=GET path=//shop/wp-includes/wlwmanifest.xml status=404 duration=0.37ms
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140537997962144 method=GET path=//wp1/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:21 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140537997962144 method=GET path=//wp1/wp-includes/wlwmanifest.xml status=404 duration=0.81ms
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041930800 method=GET path=//test/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041930800 method=GET path=//test/wp-includes/wlwmanifest.xml status=404 duration=0.36ms
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041928160 method=GET path=//wp2/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041928160 method=GET path=//wp2/wp-includes/wlwmanifest.xml status=404 duration=0.42ms
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041934640 method=GET path=//site/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041934640 method=GET path=//site/wp-includes/wlwmanifest.xml status=404 duration=0.31ms
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041928016 method=GET path=//cms/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041928016 method=GET path=//cms/wp-includes/wlwmanifest.xml status=404 duration=0.36ms
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041937616 method=GET path=//sito/wp-includes/wlwmanifest.xml client=127.0.0.1
+2025-11-27 18:14:22 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041937616 method=GET path=//sito/wp-includes/wlwmanifest.xml status=404 duration=0.36ms
+2025-11-27 18:14:53 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041932672 method=GET path=/ client=127.0.0.1
+2025-11-27 18:14:53 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041932672 method=GET path=/ status=200 duration=0.42ms
+2025-11-27 18:14:54 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041936416 method=GET path=/sitemap.xml client=127.0.0.1
+2025-11-27 18:14:54 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041936416 method=GET path=/sitemap.xml status=404 duration=0.34ms
+2025-11-27 18:14:54 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041933920 method=GET path=/favicon.ico client=127.0.0.1
+2025-11-27 18:14:54 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041933920 method=GET path=/favicon.ico status=404 duration=0.28ms
+2025-11-27 18:14:54 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041941744 method=GET path=/robots.txt client=127.0.0.1
+2025-11-27 18:14:54 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041941744 method=GET path=/robots.txt status=404 duration=0.31ms
+2025-11-27 18:14:56 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041938000 method=GET path=/favicon.ico client=127.0.0.1
+2025-11-27 18:14:56 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041938000 method=GET path=/favicon.ico status=404 duration=0.38ms
+2025-11-27 18:14:56 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538042491504 method=GET path=/robots.txt client=127.0.0.1
+2025-11-27 18:14:56 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538042491504 method=GET path=/robots.txt status=404 duration=0.40ms
+2025-11-27 18:14:58 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041751632 method=GET path=/ client=127.0.0.1
+2025-11-27 18:14:58 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041751632 method=GET path=/ status=200 duration=0.49ms
+2025-11-27 18:14:59 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041753312 method=GET path=/favicon.ico client=127.0.0.1
+2025-11-27 18:14:59 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041753312 method=GET path=/favicon.ico status=404 duration=0.42ms
+2025-11-27 18:14:59 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041752256 method=GET path=/robots.txt client=127.0.0.1
+2025-11-27 18:14:59 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041752256 method=GET path=/robots.txt status=404 duration=0.24ms
+2025-11-27 18:18:34 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=140538041750480 method=GET path=/robots.txt client=127.0.0.1
+2025-11-27 18:18:34 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=140538041750480 method=GET path=/robots.txt status=404 duration=0.44ms
+2025-11-27 18:30:46 - apscheduler.scheduler - [32mINFO[0m - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-11-27 18:30:46 - apscheduler.scheduler - [32mINFO[0m - Added job "avito_auto_poller" to job store "default"
+2025-11-27 18:30:46 - apscheduler.scheduler - [32mINFO[0m - Scheduler started
+2025-11-27 18:30:46 - avito-assist - [32mINFO[0m - 🚀 Автоответчик запущен! Каждые 30 сек
+2025-11-27 18:30:54 - apscheduler.scheduler - [32mINFO[0m - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-11-27 18:30:54 - apscheduler.scheduler - [32mINFO[0m - Added job "avito_auto_poller" to job store "default"
+2025-11-27 18:30:54 - apscheduler.scheduler - [32mINFO[0m - Scheduler started
+2025-11-27 18:30:54 - avito-assist - [32mINFO[0m - 🚀 Автоответчик запущен! Каждые 30 сек
+2025-11-27 18:31:12 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565497627184 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 18:31:12 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565497627184 method=GET path=/ui/project status=200 duration=9.98ms
+2025-11-27 18:31:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:31:54 MSK)" (scheduled at 2025-11-27 18:31:24.649970+03:00)
+2025-11-27 18:31:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:31:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:31:54 MSK)" executed successfully
+2025-11-27 18:31:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:32:24 MSK)" (scheduled at 2025-11-27 18:31:54.649970+03:00)
+2025-11-27 18:31:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:31:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:32:24 MSK)" executed successfully
+2025-11-27 18:32:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:32:54 MSK)" (scheduled at 2025-11-27 18:32:24.649970+03:00)
+2025-11-27 18:32:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:32:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:32:54 MSK)" executed successfully
+2025-11-27 18:32:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:33:24 MSK)" (scheduled at 2025-11-27 18:32:54.649970+03:00)
+2025-11-27 18:32:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:32:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:33:24 MSK)" executed successfully
+2025-11-27 18:33:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:33:54 MSK)" (scheduled at 2025-11-27 18:33:24.649970+03:00)
+2025-11-27 18:33:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:33:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:33:54 MSK)" executed successfully
+2025-11-27 18:33:44 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462200208 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 18:33:44 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462200208 method=GET path=/wp-admin/setup-config.php status=404 duration=0.47ms
+2025-11-27 18:33:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:34:24 MSK)" (scheduled at 2025-11-27 18:33:54.649970+03:00)
+2025-11-27 18:33:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:33:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:34:24 MSK)" executed successfully
+2025-11-27 18:34:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:34:54 MSK)" (scheduled at 2025-11-27 18:34:24.649970+03:00)
+2025-11-27 18:34:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:34:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:34:54 MSK)" executed successfully
+2025-11-27 18:34:50 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462200928 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 18:34:50 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462200928 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.35ms
+2025-11-27 18:34:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:35:24 MSK)" (scheduled at 2025-11-27 18:34:54.649970+03:00)
+2025-11-27 18:34:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:34:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:35:24 MSK)" executed successfully
+2025-11-27 18:35:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:35:54 MSK)" (scheduled at 2025-11-27 18:35:24.649970+03:00)
+2025-11-27 18:35:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:35:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:35:54 MSK)" executed successfully
+2025-11-27 18:35:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:36:24 MSK)" (scheduled at 2025-11-27 18:35:54.649970+03:00)
+2025-11-27 18:35:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:35:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:36:24 MSK)" executed successfully
+2025-11-27 18:35:57 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462199248 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 18:35:57 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462199248 method=GET path=/wp-admin/setup-config.php status=404 duration=0.37ms
+2025-11-27 18:36:22 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462202464 method=POST path=/webhooks/avito client=127.0.0.1
+2025-11-27 18:36:22 - avito-assist - [31mERROR[0m - Validation Error: path=/webhooks/avito errors=[{'type': 'int_parsing', 'loc': ('body', 'version'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'v3.0.0'}, {'type': 'string_type', 'loc': ('body', 'timestamp'), 'msg': 'Input should be a valid string', 'input': 1764257782}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'user_id'), 'msg': 'Input should be a valid string', 'input': 107238239}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'author_id'), 'msg': 'Input should be a valid string', 'input': 107238239}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'created'), 'msg': 'Input should be a valid string', 'input': 1764257782}]
+2025-11-27 18:36:22 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462202464 method=POST path=/webhooks/avito status=422 duration=1.26ms
+2025-11-27 18:36:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:36:54 MSK)" (scheduled at 2025-11-27 18:36:24.649970+03:00)
+2025-11-27 18:36:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:36:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:36:54 MSK)" executed successfully
+2025-11-27 18:36:40 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462407104 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 18:36:40 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462407104 method=POST path=/ui/project status=303 duration=3.90ms
+2025-11-27 18:36:40 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462197616 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 18:36:40 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462197616 method=GET path=/ui/project status=200 duration=1.44ms
+2025-11-27 18:36:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:37:24 MSK)" (scheduled at 2025-11-27 18:36:54.649970+03:00)
+2025-11-27 18:36:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:36:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:37:24 MSK)" executed successfully
+2025-11-27 18:37:07 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462392208 method=POST path=/webhooks/avito client=127.0.0.1
+2025-11-27 18:37:07 - avito-assist - [31mERROR[0m - Validation Error: path=/webhooks/avito errors=[{'type': 'int_parsing', 'loc': ('body', 'version'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'v3.0.0'}, {'type': 'string_type', 'loc': ('body', 'timestamp'), 'msg': 'Input should be a valid string', 'input': 1764257827}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'user_id'), 'msg': 'Input should be a valid string', 'input': 107238239}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'author_id'), 'msg': 'Input should be a valid string', 'input': 159471568}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'created'), 'msg': 'Input should be a valid string', 'input': 1764257826}]
+2025-11-27 18:37:07 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462392208 method=POST path=/webhooks/avito status=422 duration=1.09ms
+2025-11-27 18:37:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:37:54 MSK)" (scheduled at 2025-11-27 18:37:24.649970+03:00)
+2025-11-27 18:37:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:37:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:37:54 MSK)" executed successfully
+2025-11-27 18:37:45 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462398496 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 18:37:45 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462398496 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.44ms
+2025-11-27 18:37:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:38:24 MSK)" (scheduled at 2025-11-27 18:37:54.649970+03:00)
+2025-11-27 18:37:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:37:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:38:24 MSK)" executed successfully
+2025-11-27 18:38:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:38:54 MSK)" (scheduled at 2025-11-27 18:38:24.649970+03:00)
+2025-11-27 18:38:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:38:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:38:54 MSK)" executed successfully
+2025-11-27 18:38:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:39:24 MSK)" (scheduled at 2025-11-27 18:38:54.649970+03:00)
+2025-11-27 18:38:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:38:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:39:24 MSK)" executed successfully
+2025-11-27 18:39:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:39:54 MSK)" (scheduled at 2025-11-27 18:39:24.649970+03:00)
+2025-11-27 18:39:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:39:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:39:54 MSK)" executed successfully
+2025-11-27 18:39:30 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462450640 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 18:39:30 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462450640 method=POST path=/ui/project status=303 duration=2.34ms
+2025-11-27 18:39:30 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462453952 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 18:39:30 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462453952 method=GET path=/ui/project status=200 duration=1.15ms
+2025-11-27 18:39:31 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462455824 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 18:39:31 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462455824 method=POST path=/ui/project status=303 duration=2.47ms
+2025-11-27 18:39:32 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462457216 method=POST path=/ui/project client=127.0.0.1
+2025-11-27 18:39:32 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462457216 method=POST path=/ui/project status=303 duration=2.27ms
+2025-11-27 18:39:33 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=136565462391872 method=GET path=/ui/project client=127.0.0.1
+2025-11-27 18:39:33 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=136565462391872 method=GET path=/ui/project status=200 duration=1.32ms
+2025-11-27 18:39:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:40:24 MSK)" (scheduled at 2025-11-27 18:39:54.649970+03:00)
+2025-11-27 18:39:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:39:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:40:24 MSK)" executed successfully
+2025-11-27 18:40:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:40:54 MSK)" (scheduled at 2025-11-27 18:40:24.649970+03:00)
+2025-11-27 18:40:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:40:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:40:54 MSK)" executed successfully
+2025-11-27 18:40:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:41:24 MSK)" (scheduled at 2025-11-27 18:40:54.649970+03:00)
+2025-11-27 18:40:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:40:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:41:24 MSK)" executed successfully
+2025-11-27 18:41:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:41:54 MSK)" (scheduled at 2025-11-27 18:41:24.649970+03:00)
+2025-11-27 18:41:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:41:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:41:54 MSK)" executed successfully
+2025-11-27 18:41:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:42:24 MSK)" (scheduled at 2025-11-27 18:41:54.649970+03:00)
+2025-11-27 18:41:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:41:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:42:24 MSK)" executed successfully
+2025-11-27 18:42:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:42:54 MSK)" (scheduled at 2025-11-27 18:42:24.649970+03:00)
+2025-11-27 18:42:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:42:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:42:54 MSK)" executed successfully
+2025-11-27 18:42:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:43:24 MSK)" (scheduled at 2025-11-27 18:42:54.649970+03:00)
+2025-11-27 18:42:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:42:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:43:24 MSK)" executed successfully
+2025-11-27 18:43:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:43:54 MSK)" (scheduled at 2025-11-27 18:43:24.649970+03:00)
+2025-11-27 18:43:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:43:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:43:54 MSK)" executed successfully
+2025-11-27 18:43:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:44:24 MSK)" (scheduled at 2025-11-27 18:43:54.649970+03:00)
+2025-11-27 18:43:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:43:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:44:24 MSK)" executed successfully
+2025-11-27 18:44:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:44:54 MSK)" (scheduled at 2025-11-27 18:44:24.649970+03:00)
+2025-11-27 18:44:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:44:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:44:54 MSK)" executed successfully
+2025-11-27 18:44:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:45:24 MSK)" (scheduled at 2025-11-27 18:44:54.649970+03:00)
+2025-11-27 18:44:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:44:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:45:24 MSK)" executed successfully
+2025-11-27 18:45:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:45:54 MSK)" (scheduled at 2025-11-27 18:45:24.649970+03:00)
+2025-11-27 18:45:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:45:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:45:54 MSK)" executed successfully
+2025-11-27 18:45:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:46:24 MSK)" (scheduled at 2025-11-27 18:45:54.649970+03:00)
+2025-11-27 18:45:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:45:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:46:24 MSK)" executed successfully
+2025-11-27 18:46:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:46:54 MSK)" (scheduled at 2025-11-27 18:46:24.649970+03:00)
+2025-11-27 18:46:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:46:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:46:54 MSK)" executed successfully
+2025-11-27 18:46:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:47:24 MSK)" (scheduled at 2025-11-27 18:46:54.649970+03:00)
+2025-11-27 18:46:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:46:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:47:24 MSK)" executed successfully
+2025-11-27 18:47:24 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:47:54 MSK)" (scheduled at 2025-11-27 18:47:24.649970+03:00)
+2025-11-27 18:47:24 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:47:24 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:47:54 MSK)" executed successfully
+2025-11-27 18:47:54 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:48:24 MSK)" (scheduled at 2025-11-27 18:47:54.649970+03:00)
+2025-11-27 18:47:54 - avito-assist - [31mERROR[0m - Поллер ошибка: AvitoMessengerClient.get_chats() got an unexpected keyword argument 'unread_only'
+2025-11-27 18:47:54 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:48:24 MSK)" executed successfully
+2025-11-27 18:48:07 - apscheduler.scheduler - [32mINFO[0m - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-11-27 18:48:07 - apscheduler.scheduler - [32mINFO[0m - Added job "avito_auto_poller" to job store "default"
+2025-11-27 18:48:07 - apscheduler.scheduler - [32mINFO[0m - Scheduler started
+2025-11-27 18:48:07 - avito-assist - [32mINFO[0m - 🚀 Автоответчик запущен! Каждые 30 сек
+2025-11-27 18:48:37 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:49:07 MSK)" (scheduled at 2025-11-27 18:48:37.273675+03:00)
+2025-11-27 18:48:37 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:48:37 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:49:07 MSK)" executed successfully
+2025-11-27 18:49:07 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:49:37 MSK)" (scheduled at 2025-11-27 18:49:07.273675+03:00)
+2025-11-27 18:49:07 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:49:07 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:49:37 MSK)" executed successfully
+2025-11-27 18:49:27 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=132281296420992 method=POST path=/webhooks/avito client=127.0.0.1
+2025-11-27 18:49:27 - avito-assist - [31mERROR[0m - Validation Error: path=/webhooks/avito errors=[{'type': 'int_parsing', 'loc': ('body', 'version'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'v3.0.0'}, {'type': 'string_type', 'loc': ('body', 'timestamp'), 'msg': 'Input should be a valid string', 'input': 1764258567}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'user_id'), 'msg': 'Input should be a valid string', 'input': 107238239}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'author_id'), 'msg': 'Input should be a valid string', 'input': 159471568}, {'type': 'string_type', 'loc': ('body', 'payload', 'value', 'created'), 'msg': 'Input should be a valid string', 'input': 1764258566}]
+2025-11-27 18:49:27 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=132281296420992 method=POST path=/webhooks/avito status=422 duration=2.46ms
+2025-11-27 18:49:37 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:50:07 MSK)" (scheduled at 2025-11-27 18:49:37.273675+03:00)
+2025-11-27 18:49:37 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:49:37 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:50:07 MSK)" executed successfully
+2025-11-27 18:50:07 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:50:37 MSK)" (scheduled at 2025-11-27 18:50:07.273675+03:00)
+2025-11-27 18:50:07 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:50:07 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:50:37 MSK)" executed successfully
+2025-11-27 18:50:37 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:51:07 MSK)" (scheduled at 2025-11-27 18:50:37.273675+03:00)
+2025-11-27 18:50:37 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:50:37 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:51:07 MSK)" executed successfully
+2025-11-27 18:51:07 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:51:37 MSK)" (scheduled at 2025-11-27 18:51:07.273675+03:00)
+2025-11-27 18:51:07 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:51:07 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:51:37 MSK)" executed successfully
+2025-11-27 18:51:37 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:52:07 MSK)" (scheduled at 2025-11-27 18:51:37.273675+03:00)
+2025-11-27 18:51:37 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:51:37 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:52:07 MSK)" executed successfully
+2025-11-27 18:52:07 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:52:37 MSK)" (scheduled at 2025-11-27 18:52:07.273675+03:00)
+2025-11-27 18:52:07 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:52:07 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:52:37 MSK)" executed successfully
+2025-11-27 18:52:37 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:53:07 MSK)" (scheduled at 2025-11-27 18:52:37.273675+03:00)
+2025-11-27 18:52:37 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:52:37 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:53:07 MSK)" executed successfully
+2025-11-27 18:53:07 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:53:37 MSK)" (scheduled at 2025-11-27 18:53:07.273675+03:00)
+2025-11-27 18:53:07 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:53:07 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:53:37 MSK)" executed successfully
+2025-11-27 18:53:37 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:54:07 MSK)" (scheduled at 2025-11-27 18:53:37.273675+03:00)
+2025-11-27 18:53:37 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:53:37 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:54:07 MSK)" executed successfully
+2025-11-27 18:54:07 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:54:37 MSK)" (scheduled at 2025-11-27 18:54:07.273675+03:00)
+2025-11-27 18:54:07 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:54:07 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:54:37 MSK)" executed successfully
+2025-11-27 18:54:37 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:55:07 MSK)" (scheduled at 2025-11-27 18:54:37.273675+03:00)
+2025-11-27 18:54:37 - avito-assist - [31mERROR[0m - Поллер ошибка: 'AvitoMessengerClient' object has no attribute 'user_id'
+2025-11-27 18:54:37 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 18:55:07 MSK)" executed successfully
+2025-11-27 22:05:17 - apscheduler.scheduler - [32mINFO[0m - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-11-27 22:05:17 - apscheduler.scheduler - [32mINFO[0m - Added job "avito_auto_poller" to job store "default"
+2025-11-27 22:05:17 - apscheduler.scheduler - [32mINFO[0m - Scheduler started
+2025-11-27 22:05:17 - avito-assist - [32mINFO[0m - 🚀 Автоответчик запущен! Каждые 30 сек
+2025-11-27 22:05:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:06:17 MSK)" (scheduled at 2025-11-27 22:05:47.307851+03:00)
+2025-11-27 22:05:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:06:17 MSK)" executed successfully
+2025-11-27 22:06:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:06:47 MSK)" (scheduled at 2025-11-27 22:06:17.307851+03:00)
+2025-11-27 22:06:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:06:47 MSK)" executed successfully
+2025-11-27 22:06:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:07:17 MSK)" (scheduled at 2025-11-27 22:06:47.307851+03:00)
+2025-11-27 22:06:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:07:17 MSK)" executed successfully
+2025-11-27 22:07:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:07:47 MSK)" (scheduled at 2025-11-27 22:07:17.307851+03:00)
+2025-11-27 22:07:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:07:47 MSK)" executed successfully
+2025-11-27 22:07:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:08:17 MSK)" (scheduled at 2025-11-27 22:07:47.307851+03:00)
+2025-11-27 22:07:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:08:17 MSK)" executed successfully
+2025-11-27 22:08:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:08:47 MSK)" (scheduled at 2025-11-27 22:08:17.307851+03:00)
+2025-11-27 22:08:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:08:47 MSK)" executed successfully
+2025-11-27 22:08:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:09:17 MSK)" (scheduled at 2025-11-27 22:08:47.307851+03:00)
+2025-11-27 22:08:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:09:17 MSK)" executed successfully
+2025-11-27 22:09:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:09:47 MSK)" (scheduled at 2025-11-27 22:09:17.307851+03:00)
+2025-11-27 22:09:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:09:47 MSK)" executed successfully
+2025-11-27 22:09:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:10:17 MSK)" (scheduled at 2025-11-27 22:09:47.307851+03:00)
+2025-11-27 22:09:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:10:17 MSK)" executed successfully
+2025-11-27 22:10:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:10:47 MSK)" (scheduled at 2025-11-27 22:10:17.307851+03:00)
+2025-11-27 22:10:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:10:47 MSK)" executed successfully
+2025-11-27 22:10:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:11:17 MSK)" (scheduled at 2025-11-27 22:10:47.307851+03:00)
+2025-11-27 22:10:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:11:17 MSK)" executed successfully
+2025-11-27 22:11:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:11:47 MSK)" (scheduled at 2025-11-27 22:11:17.307851+03:00)
+2025-11-27 22:11:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:11:47 MSK)" executed successfully
+2025-11-27 22:11:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:12:17 MSK)" (scheduled at 2025-11-27 22:11:47.307851+03:00)
+2025-11-27 22:11:48 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:12:17 MSK)" executed successfully
+2025-11-27 22:11:57 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024074158032 method=GET path=/wp-login.php client=127.0.0.1
+2025-11-27 22:11:57 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024074158032 method=GET path=/wp-login.php status=404 duration=0.38ms
+2025-11-27 22:12:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:12:47 MSK)" (scheduled at 2025-11-27 22:12:17.307851+03:00)
+2025-11-27 22:12:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:12:47 MSK)" executed successfully
+2025-11-27 22:12:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:13:17 MSK)" (scheduled at 2025-11-27 22:12:47.307851+03:00)
+2025-11-27 22:12:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:13:17 MSK)" executed successfully
+2025-11-27 22:13:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:13:47 MSK)" (scheduled at 2025-11-27 22:13:17.307851+03:00)
+2025-11-27 22:13:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:13:47 MSK)" executed successfully
+2025-11-27 22:13:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:14:17 MSK)" (scheduled at 2025-11-27 22:13:47.307851+03:00)
+2025-11-27 22:13:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:14:17 MSK)" executed successfully
+2025-11-27 22:14:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:14:47 MSK)" (scheduled at 2025-11-27 22:14:17.307851+03:00)
+2025-11-27 22:14:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:14:47 MSK)" executed successfully
+2025-11-27 22:14:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:15:17 MSK)" (scheduled at 2025-11-27 22:14:47.307851+03:00)
+2025-11-27 22:14:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:15:17 MSK)" executed successfully
+2025-11-27 22:15:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:15:47 MSK)" (scheduled at 2025-11-27 22:15:17.307851+03:00)
+2025-11-27 22:15:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:15:47 MSK)" executed successfully
+2025-11-27 22:15:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:16:17 MSK)" (scheduled at 2025-11-27 22:15:47.307851+03:00)
+2025-11-27 22:15:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:16:17 MSK)" executed successfully
+2025-11-27 22:16:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:16:47 MSK)" (scheduled at 2025-11-27 22:16:17.307851+03:00)
+2025-11-27 22:16:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:16:47 MSK)" executed successfully
+2025-11-27 22:16:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:17:17 MSK)" (scheduled at 2025-11-27 22:16:47.307851+03:00)
+2025-11-27 22:16:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:17:17 MSK)" executed successfully
+2025-11-27 22:17:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:17:47 MSK)" (scheduled at 2025-11-27 22:17:17.307851+03:00)
+2025-11-27 22:17:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:17:47 MSK)" executed successfully
+2025-11-27 22:17:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:18:17 MSK)" (scheduled at 2025-11-27 22:17:47.307851+03:00)
+2025-11-27 22:17:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:18:17 MSK)" executed successfully
+2025-11-27 22:18:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:18:47 MSK)" (scheduled at 2025-11-27 22:18:17.307851+03:00)
+2025-11-27 22:18:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:18:47 MSK)" executed successfully
+2025-11-27 22:18:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:19:17 MSK)" (scheduled at 2025-11-27 22:18:47.307851+03:00)
+2025-11-27 22:18:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:19:17 MSK)" executed successfully
+2025-11-27 22:19:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:19:47 MSK)" (scheduled at 2025-11-27 22:19:17.307851+03:00)
+2025-11-27 22:19:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:19:47 MSK)" executed successfully
+2025-11-27 22:19:34 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038756288 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 22:19:34 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038756288 method=GET path=/wp-admin/setup-config.php status=404 duration=0.36ms
+2025-11-27 22:19:34 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038941424 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 22:19:34 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038941424 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.32ms
+2025-11-27 22:19:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:20:17 MSK)" (scheduled at 2025-11-27 22:19:47.307851+03:00)
+2025-11-27 22:19:48 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:20:17 MSK)" executed successfully
+2025-11-27 22:20:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:20:47 MSK)" (scheduled at 2025-11-27 22:20:17.307851+03:00)
+2025-11-27 22:20:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:20:47 MSK)" executed successfully
+2025-11-27 22:20:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:21:17 MSK)" (scheduled at 2025-11-27 22:20:47.307851+03:00)
+2025-11-27 22:20:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:21:17 MSK)" executed successfully
+2025-11-27 22:21:16 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038943440 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 22:21:16 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038943440 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.39ms
+2025-11-27 22:21:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:21:47 MSK)" (scheduled at 2025-11-27 22:21:17.307851+03:00)
+2025-11-27 22:21:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:21:47 MSK)" executed successfully
+2025-11-27 22:21:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:22:17 MSK)" (scheduled at 2025-11-27 22:21:47.307851+03:00)
+2025-11-27 22:21:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:22:17 MSK)" executed successfully
+2025-11-27 22:22:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:22:47 MSK)" (scheduled at 2025-11-27 22:22:17.307851+03:00)
+2025-11-27 22:22:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:22:47 MSK)" executed successfully
+2025-11-27 22:22:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:23:17 MSK)" (scheduled at 2025-11-27 22:22:47.307851+03:00)
+2025-11-27 22:22:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:23:17 MSK)" executed successfully
+2025-11-27 22:23:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:23:47 MSK)" (scheduled at 2025-11-27 22:23:17.307851+03:00)
+2025-11-27 22:23:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:23:47 MSK)" executed successfully
+2025-11-27 22:23:28 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038948192 method=GET path=/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 22:23:28 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038948192 method=GET path=/wp-admin/setup-config.php status=404 duration=0.34ms
+2025-11-27 22:23:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:24:17 MSK)" (scheduled at 2025-11-27 22:23:47.307851+03:00)
+2025-11-27 22:23:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:24:17 MSK)" executed successfully
+2025-11-27 22:24:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:24:47 MSK)" (scheduled at 2025-11-27 22:24:17.307851+03:00)
+2025-11-27 22:24:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:24:47 MSK)" executed successfully
+2025-11-27 22:24:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:25:17 MSK)" (scheduled at 2025-11-27 22:24:47.307851+03:00)
+2025-11-27 22:24:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:25:17 MSK)" executed successfully
+2025-11-27 22:25:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:25:47 MSK)" (scheduled at 2025-11-27 22:25:17.307851+03:00)
+2025-11-27 22:25:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:25:47 MSK)" executed successfully
+2025-11-27 22:25:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:26:17 MSK)" (scheduled at 2025-11-27 22:25:47.307851+03:00)
+2025-11-27 22:25:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:26:17 MSK)" executed successfully
+2025-11-27 22:26:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:26:47 MSK)" (scheduled at 2025-11-27 22:26:17.307851+03:00)
+2025-11-27 22:26:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:26:47 MSK)" executed successfully
+2025-11-27 22:26:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:27:17 MSK)" (scheduled at 2025-11-27 22:26:47.307851+03:00)
+2025-11-27 22:26:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:27:17 MSK)" executed successfully
+2025-11-27 22:27:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:27:47 MSK)" (scheduled at 2025-11-27 22:27:17.307851+03:00)
+2025-11-27 22:27:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:27:47 MSK)" executed successfully
+2025-11-27 22:27:30 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038951168 method=POST path=/webhooks/avito client=127.0.0.1
+2025-11-27 22:27:30 - avito-assist - [32mINFO[0m - Received Avito webhook: id=7aef16ea-0bc9-4a93-b12d-bf114fb5c288 type=message chat_id=u2i-AjXULxdDClzCiakMI5dPCA
+2025-11-27 22:27:30 - app.clients.perplexity_client - [31mERROR[0m - Error while calling Perplexity Chat Completions API
+Traceback (most recent call last):
+  File "/opt/avito-assist-backend/app/clients/perplexity_client.py", line 53, in generate_reply
+    completion = self._client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_utils/_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/resources/chat/completions.py", line 367, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_base_client.py", line 966, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_base_client.py", line 493, in _build_request
+    headers = self._build_headers(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_base_client.py", line 437, in _build_headers
+    headers = httpx.Headers(headers_dict)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/httpx/_models.py", line 156, in __init__
+    bytes_value = _normalize_header_value(v, encoding)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/httpx/_models.py", line 82, in _normalize_header_value
+    return value.encode(encoding or "ascii")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 7-10: ordinal not in range(128)
+2025-11-27 22:27:30 - avito-assist - [31mERROR[0m - Perplexity error for chat_id=u2i-AjXULxdDClzCiakMI5dPCA: Failed to get reply from Perplexity
+2025-11-27 22:27:30 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038951168 method=POST path=/webhooks/avito status=200 duration=20.32ms
+2025-11-27 22:27:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:28:17 MSK)" (scheduled at 2025-11-27 22:27:47.307851+03:00)
+2025-11-27 22:27:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:28:17 MSK)" executed successfully
+2025-11-27 22:28:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:28:47 MSK)" (scheduled at 2025-11-27 22:28:17.307851+03:00)
+2025-11-27 22:28:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:28:47 MSK)" executed successfully
+2025-11-27 22:28:30 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038951264 method=POST path=/webhooks/avito client=127.0.0.1
+2025-11-27 22:28:30 - avito-assist - [32mINFO[0m - Received Avito webhook: id=d3976b3a-d6f4-4e0e-a6c3-90fb8e5d9498 type=message chat_id=u2i-AjXULxdDClzCiakMI5dPCA
+2025-11-27 22:28:30 - app.clients.perplexity_client - [31mERROR[0m - Error while calling Perplexity Chat Completions API
+Traceback (most recent call last):
+  File "/opt/avito-assist-backend/app/clients/perplexity_client.py", line 53, in generate_reply
+    completion = self._client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_utils/_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/resources/chat/completions.py", line 367, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_base_client.py", line 966, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_base_client.py", line 493, in _build_request
+    headers = self._build_headers(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/perplexity/_base_client.py", line 437, in _build_headers
+    headers = httpx.Headers(headers_dict)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/httpx/_models.py", line 156, in __init__
+    bytes_value = _normalize_header_value(v, encoding)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/avito-assist-backend/venv/lib/python3.12/site-packages/httpx/_models.py", line 82, in _normalize_header_value
+    return value.encode(encoding or "ascii")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 7-10: ordinal not in range(128)
+2025-11-27 22:28:30 - avito-assist - [31mERROR[0m - Perplexity error for chat_id=u2i-AjXULxdDClzCiakMI5dPCA: Failed to get reply from Perplexity
+2025-11-27 22:28:30 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038951264 method=POST path=/webhooks/avito status=200 duration=3.62ms
+2025-11-27 22:28:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:29:17 MSK)" (scheduled at 2025-11-27 22:28:47.307851+03:00)
+2025-11-27 22:28:47 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:28:47 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:28:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:29:17 MSK)" executed successfully
+2025-11-27 22:29:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:29:47 MSK)" (scheduled at 2025-11-27 22:29:17.307851+03:00)
+2025-11-27 22:29:17 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:29:17 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:29:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:29:47 MSK)" executed successfully
+2025-11-27 22:29:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:30:17 MSK)" (scheduled at 2025-11-27 22:29:47.307851+03:00)
+2025-11-27 22:29:47 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:29:47 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:29:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:30:17 MSK)" executed successfully
+2025-11-27 22:30:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:30:47 MSK)" (scheduled at 2025-11-27 22:30:17.307851+03:00)
+2025-11-27 22:30:17 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:30:17 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:30:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:30:47 MSK)" executed successfully
+2025-11-27 22:30:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:31:17 MSK)" (scheduled at 2025-11-27 22:30:47.307851+03:00)
+2025-11-27 22:30:47 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:30:47 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:30:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:31:17 MSK)" executed successfully
+2025-11-27 22:31:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:31:47 MSK)" (scheduled at 2025-11-27 22:31:17.307851+03:00)
+2025-11-27 22:31:18 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:31:18 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:31:18 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:31:47 MSK)" executed successfully
+2025-11-27 22:31:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:32:17 MSK)" (scheduled at 2025-11-27 22:31:47.307851+03:00)
+2025-11-27 22:31:47 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:31:47 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:31:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:32:17 MSK)" executed successfully
+2025-11-27 22:32:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:32:47 MSK)" (scheduled at 2025-11-27 22:32:17.307851+03:00)
+2025-11-27 22:32:17 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:32:17 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:32:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:32:47 MSK)" executed successfully
+2025-11-27 22:32:28 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038943344 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 22:32:28 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038943344 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.32ms
+2025-11-27 22:32:47 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:33:17 MSK)" (scheduled at 2025-11-27 22:32:47.307851+03:00)
+2025-11-27 22:32:47 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:32:47 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:32:47 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:33:17 MSK)" executed successfully
+2025-11-27 22:32:49 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038757968 method=GET path=/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application client=127.0.0.1
+2025-11-27 22:32:49 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038757968 method=GET path=/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application status=404 duration=0.61ms
+2025-11-27 22:33:17 - apscheduler.executors.default - [32mINFO[0m - Running job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:33:47 MSK)" (scheduled at 2025-11-27 22:33:17.307851+03:00)
+2025-11-27 22:33:17 - app.clients.avito_client - [31mERROR[0m - Avito API error: GET https://api.avito.ru/messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages -> 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:33:17 - avito-assist - [31mERROR[0m - Поллер ошибка: Avito API returned 404: {"message":"route /messenger/v1/chats/u2i-AjXULxdDClzCiakMI5dPCA/messages not found","code":400}
+
+2025-11-27 22:33:17 - apscheduler.executors.default - [32mINFO[0m - Job "avito_auto_poller (trigger: interval[0:00:30], next run at: 2025-11-27 22:33:47 MSK)" executed successfully
+2025-11-27 22:33:25 - avito-assist.middleware - [32mINFO[0m - Request started: request_id=130024038956400 method=GET path=/wordpress/wp-admin/setup-config.php client=2a06:98c0:3600::103
+2025-11-27 22:33:25 - avito-assist.middleware - [32mINFO[0m - Request completed: request_id=130024038956400 method=GET path=/wordpress/wp-admin/setup-config.php status=404 duration=0.38ms

@@ -1,7 +1,8 @@
 {
   "default": {
-    "access_token": "ACCESS",
-    "refresh_token": "REFRESH",
-    "expires_at": "2025-11-20T09:11:28.105964+00:00"
+    "access_token": "sNLBWc7bSROhmloz0-ME2gXWR6g_M_glckFjD0F_",
+    "refresh_token": "lowW0XHiQw6ZimiKLQuIrgB86nj3Bj4ps9kDKAxRuyG2FQEzvtfZq_A3rNyeoQgT23_wAgywiT_S9KDTvv6uJUwht3MrgMLICNSYjLKFruU4ZkgBtS-8_QnY7xyfJjjN",
+    "expires_at": "2025-11-28T14:25:30.500597+00:00",
+    "account_id": "107238239"
   }
 }
